@@ -1,0 +1,13 @@
+"D:\CLion 2022.2\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" -S "C:\GitHub\Laboratory-works\Lazakovich V\Lab4" -B "C:\GitHub\Laboratory-works\Lazakovich V\Lab4\cmake-build-debug"
+-- Configuring done
+CMake Error at CMakeLists.txt:9 (add_executable):
+  Cannot find source file:
+
+    4.c
+
+
+CMake Error at CMakeLists.txt:9 (add_executable):
+  No SOURCES given to target: task4
+
+
+CMake Generate step failed.  Build files cannot be regenerated correctly.

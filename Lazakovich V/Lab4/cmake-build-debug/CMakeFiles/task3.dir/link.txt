@@ -1,3 +1,0 @@
-"D:\CLion 2022.2\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\task3.dir/objects.a
-"D:\CLion 2022.2\bin\mingw\bin\ar.exe" qc CMakeFiles\task3.dir/objects.a @CMakeFiles\task3.dir\objects1.rsp
-"D:\CLion 2022.2\bin\mingw\bin\gcc.exe" -g -Wl,--whole-archive CMakeFiles\task3.dir/objects.a -Wl,--no-whole-archive -o task3.exe -Wl,--out-implib,libtask3.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\task3.dir\linklibs.rsp

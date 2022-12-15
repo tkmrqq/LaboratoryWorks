@@ -1,4 +1,4 @@
 [big white purple-background]*Laboratory-works*.
 https://github.com/tkmrqq - automatic!
-[#img-makima,caption="Figure 1: ",link=https://pin.it/4VhIbBs]
+[#img-makima,caption="Figure 1: ",link=https://i.pinimg.com/originals/25/e7/e9/25e7e94f5d7d516377225310b91b9072.png]
 image::macros:makima.jpg[Sunset,200,100]

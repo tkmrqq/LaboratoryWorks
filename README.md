@@ -1,4 +1,4 @@
 #***Laboratory works (ОАИП)***#
 <p align="center">
-<img src="https://i.pinimg.com/originals/25/e7/e9/25e7e94f5d7d516377225310b91b9072.png" />
+<img src="https://i.pinimg.com/originals/a0/3a/29/a03a2900e34d5ed8dd0ed209632eedc8.jpg" />
 </p>

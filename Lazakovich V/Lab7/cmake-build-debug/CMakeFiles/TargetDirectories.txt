@@ -1,0 +1,4 @@
+C:/GitHub/Laboratory-works/Lazakovich V/Lab7/cmake-build-debug/CMakeFiles/main.dir
+C:/GitHub/Laboratory-works/Lazakovich V/Lab7/cmake-build-debug/CMakeFiles/crush.dir
+C:/GitHub/Laboratory-works/Lazakovich V/Lab7/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/GitHub/Laboratory-works/Lazakovich V/Lab7/cmake-build-debug/CMakeFiles/rebuild_cache.dir

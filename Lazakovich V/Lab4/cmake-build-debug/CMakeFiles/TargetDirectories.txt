@@ -1,0 +1,5 @@
+C:/GitHub/Laboratory-works/Lazakovich V/Lab4/cmake-build-debug/CMakeFiles/task1.dir
+C:/GitHub/Laboratory-works/Lazakovich V/Lab4/cmake-build-debug/CMakeFiles/task2.dir
+C:/GitHub/Laboratory-works/Lazakovich V/Lab4/cmake-build-debug/CMakeFiles/task3.dir
+C:/GitHub/Laboratory-works/Lazakovich V/Lab4/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/GitHub/Laboratory-works/Lazakovich V/Lab4/cmake-build-debug/CMakeFiles/rebuild_cache.dir

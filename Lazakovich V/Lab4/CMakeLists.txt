@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.23)
-project(untitled2 C)
+project(labs C)
 
 set(CMAKE_C_STANDARD 99)
 

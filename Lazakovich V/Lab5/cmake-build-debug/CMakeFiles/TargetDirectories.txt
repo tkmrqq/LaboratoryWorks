@@ -1,0 +1,6 @@
+C:/GitHub/Laboratory-works/Lazakovich V/Lab5/cmake-build-debug/CMakeFiles/Lab5.dir
+C:/GitHub/Laboratory-works/Lazakovich V/Lab5/cmake-build-debug/CMakeFiles/Lab5_2.dir
+C:/GitHub/Laboratory-works/Lazakovich V/Lab5/cmake-build-debug/CMakeFiles/Lab5_3.dir
+C:/GitHub/Laboratory-works/Lazakovich V/Lab5/cmake-build-debug/CMakeFiles/test.dir
+C:/GitHub/Laboratory-works/Lazakovich V/Lab5/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/GitHub/Laboratory-works/Lazakovich V/Lab5/cmake-build-debug/CMakeFiles/rebuild_cache.dir

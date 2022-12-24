@@ -9,7 +9,7 @@ int absA(int i) {
 
 int check(int x) {
     while (scanf_s("%d", &x) != 1 || x > 100 || x < 1) {
-        printf("Error input! Please, try again \n");
+        printf("Wrong input! Please, try again!\n");
         rewind(stdin);
     }
     return x;
@@ -20,18 +20,17 @@ int choice(int x) {
     printf("Pick 1) for input and 2) for random values\n");
     while (scanf_s("%d", &x) != 1 || x > 2 || x <= 0) {
         rewind(stdin);
-        printf("Wrong input\n");
-        printf("Try again! ^)");
+        printf("Wrong input! Please, try again!\n");
     }
     return x;
 }
 
 int main() {
     int firstPositive = 0, arraySize, sum = 0, x = 0;
+    int array[100];
     srand(time(0));
     printf("Input size of array:");
     arraySize = check(x);
-    int array[100];
     int l = choice(x);
     if (l == 1) {
         for (int i = 0; i < arraySize; i++) {

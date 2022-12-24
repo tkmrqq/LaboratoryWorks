@@ -7,8 +7,7 @@ int choice(int x) {
     printf("Pick 1) for input and 2) for random values\n");
     while (scanf_s("%d", &x) != 1 || x > 2 || x <= 0) {
         rewind(stdin);
-        printf("Wrong input\n");
-        printf("Try again! ^_____^\n");
+        printf("Wrong input! Please, try again!\n");
     }
     return x;
 }
@@ -37,8 +36,7 @@ int main() {
                 while (scanf_s("%d", &array1[row]) != 1 || array1[row] < 0 || array1[row] > 10)
                 {
                     rewind(stdin);
-                    printf("Wrong input. \n");
-                    printf("Input again:");
+                    printf("Wrong input. Please, try again!\n");
                 }
             }
             printf("Input second number:\n");
@@ -47,8 +45,7 @@ int main() {
                 while (scanf_s("%d", &array2[row]) != 1 || array2[row] < 0 || array2[row] > 10)
                 {
                     rewind(stdin);
-                    printf("Wrong input. \n");
-                    printf("Input again:");
+                    printf("Wrong input. Please, try again!\n");
                 }
             }
             break;

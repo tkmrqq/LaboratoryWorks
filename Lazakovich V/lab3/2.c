@@ -6,9 +6,8 @@ int choice(int x) {
     printf("Are you want to input array or get random numbers in it?\n");
     printf("Pick 1) for input and 2) for random values\n");
     while (scanf_s("%d", &x) != 1 || x > 2 || x <= 0) {
+        printf("Wrong input! Please, try again!\n");
         rewind(stdin);
-        printf("Wrong input\n");
-        printf("Try again! ^_____^\n");
     }
     return x;
 }
@@ -16,7 +15,7 @@ int choice(int x) {
 int check(int x) {
     printf("Input size of array = ");
     while (scanf_s("%d", &x) != 1 || x > 100 || x < 1) {
-        printf("Error input! Please, try again \n");
+        printf("Wrong input! Please, try again \n");
         rewind(stdin);
     }
     return x;

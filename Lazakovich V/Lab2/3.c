@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+#define pi 3.1415926536;
+
 double absa(double x)
 {
     if (x<0) x = -x;

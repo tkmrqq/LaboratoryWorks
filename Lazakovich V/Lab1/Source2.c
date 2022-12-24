@@ -4,9 +4,7 @@ int main()
 {
 	int a, b, c, d;
 	printf("Input Numbers:\n");
-	scanf("%d", &a);
-	scanf("%d", &b);
-	scanf("%d", &c);
+	scanf_s("%d %d %d", &a, &b, &c);
 //function
 	d = a;
 	if (d < b) d = b;

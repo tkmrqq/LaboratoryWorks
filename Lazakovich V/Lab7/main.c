@@ -5,7 +5,7 @@ int main() {
     while (1) {
         menu();
         getIntForTask(&task);
-        void (*tasks[4])() = {task1, task2, task3, stopProgram};
+        void (*tasks[3])() = {task1, task2, stopProgram};
         tasks[task - 1]();
     }
 }

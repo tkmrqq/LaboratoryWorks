@@ -28,19 +28,6 @@ void task2() {
     free(str0);
 }
 
-void task3() {
-    printf("Program not ready yet :(\n");
- /*   int row;
-    char **string;
-    printf("Input amount of rows:");
-    inputRow(&row);
-    stringArrInput(&string, row);
-    stringLength(string, row);
-    insertionSort(string, row);
-    printStringArray(string, row);
-    clearMemory(string, row);*/
-}
-
 void stopProgram() {
     rewind(stdin);
     exit(EXIT_SUCCESS);

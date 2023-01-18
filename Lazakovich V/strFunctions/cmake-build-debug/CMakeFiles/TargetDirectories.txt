@@ -1,0 +1,4 @@
+C:/GitHub/Laboratory-works/Lazakovich V/strFunctions/cmake-build-debug/CMakeFiles/1.dir
+C:/GitHub/Laboratory-works/Lazakovich V/strFunctions/cmake-build-debug/CMakeFiles/2.dir
+C:/GitHub/Laboratory-works/Lazakovich V/strFunctions/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/GitHub/Laboratory-works/Lazakovich V/strFunctions/cmake-build-debug/CMakeFiles/rebuild_cache.dir

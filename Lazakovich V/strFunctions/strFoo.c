@@ -1,6 +1,29 @@
 #include <malloc.h>
 #include <stdio.h>
 
+
+void reverse(char* str, int size)
+{
+    char temp;
+    for (int i = 0; i < size / 2; i++)
+    {
+        temp = str[size - i - 1];
+        str[size - i - 1] = str[i];
+        str[i] = temp;
+    }
+}
+
+void swapWords(char* str, int first_begin_index, int first_end_index, int second_begin_index, int second_end_index)
+{
+    char* str_p = &(str[first_begin_index]);
+    reverse(str_p, second_end_index - first_begin_index + 1);
+    reverse(str_p, second_end_index - second_begin_index + 1);
+    str_p = &(str[second_begin_index - (first_end_index - first_begin_index) + (second_end_index - second_begin_index)]);
+    reverse(str_p, first_end_index - first_begin_index + 1);
+    str_p = &(str[second_end_index - second_begin_index + 1]);
+    reverse(str_p, second_begin_index - first_end_index - 1);
+}
+
 int strLen(char *str) {
     int i = 0;
     while (str[i] != '\0') {

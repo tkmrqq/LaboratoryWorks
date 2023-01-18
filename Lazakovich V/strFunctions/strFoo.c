@@ -1,6 +1,49 @@
 #include <malloc.h>
 #include <stdio.h>
 
+int strLen(char *str) {
+    int i = 0;
+    while (str[i] != '\0') {
+        i++;
+    }
+    return i;
+}
+
+char *del_space(char *str)
+{
+    int i, n=strLen(str);
+
+    for (i=0; i< n-1; i++)
+    {
+        if (str[i]== ' ')
+        {
+            if (i==0)
+            {
+                for(int j=i; j<n-1; j++)
+                    str[j]=str[j+1];
+
+                str=(char*)realloc(str, sizeof(char) * n);
+                n--;
+                i--;
+            }
+
+            if (str[i+1]== ' ')
+            {
+                for(int j=i+1; j<n-1; j++)
+                    str[j]=str[j+1];
+
+                str=(char*)realloc(str, sizeof(char) * n);
+                n--;
+                i--;
+            }
+        }
+    }
+
+
+
+
+    return str;
+}
 
 void reverse(char* str, int size)
 {
@@ -22,14 +65,6 @@ void swapWords(char* str, int first_begin_index, int first_end_index, int second
     reverse(str_p, first_end_index - first_begin_index + 1);
     str_p = &(str[second_end_index - second_begin_index + 1]);
     reverse(str_p, second_begin_index - first_end_index - 1);
-}
-
-int strLen(char *str) {
-    int i = 0;
-    while (str[i] != '\0') {
-        i++;
-    }
-    return i;
 }
 
 void strCopy(char *str, char **str2) {

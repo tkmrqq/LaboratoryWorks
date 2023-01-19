@@ -7,9 +7,7 @@ void swap(int *a, int *b) {
 void bubble_sort(int *a, int n) {
     for (int k = 0; k < n; k++)
         for (int i = 0; i < n - 1; i++)
-            // сравниваем элемент со следующим
             if (a[i] > a[i + 1])
-                // меняем местами, если следующий меньше
                 swap(&a[i], &a[i + 1]);
 }
 
@@ -23,7 +21,6 @@ void selection_sort(int *a, int n) {
 void insertion_sort(int *a, int n) {
     for (int k = 1; k < n; k++)
         for (int i = k; i > 0 && a[i - 1] < a[i]; i--)
-            // мы ещё не дошли до начала массива и предыдущий элемент меньше
             swap(&a[i], &a[i - 1]);
 }
 
@@ -36,5 +33,34 @@ void shell_sort(int *array, int size) {
                 array[j + s] = temp;
             }
         }
+    }
+}
+
+void qsortRecursive(int *mas, int size) {
+    int i = 0;
+    int j = size - 1;
+    int mid = mas[size / 2];
+    do {
+        while(mas[i] < mid) {
+            i++;
+        }
+        while(mas[j] > mid) {
+            j--;
+        }
+        if (i <= j) {
+            int tmp = mas[i];
+            mas[i] = mas[j];
+            mas[j] = tmp;
+
+            i++;
+            j--;
+        }
+    } while (i <= j);
+
+    if(j > 0) {
+        qsortRecursive(mas, j + 1);
+    }
+    if (i < size) {
+        qsortRecursive(&mas[i], size - i);
     }
 }

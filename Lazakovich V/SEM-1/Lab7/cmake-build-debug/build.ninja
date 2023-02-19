@@ -74,37 +74,37 @@ build main.exe: C_EXECUTABLE_LINKER__main_Debug CMakeFiles/main.dir/main.c.obj
   TARGET_PDB = main.exe.dbg
 
 # =============================================================================
-# Object build statements for EXECUTABLE target crush
+# Object build statements for EXECUTABLE target huinya
 
 
 #############################################
-# Order-only phony target for crush
+# Order-only phony target for huinya
 
-build cmake_object_order_depends_target_crush: phony || CMakeFiles/crush.dir
+build cmake_object_order_depends_target_huinya: phony || CMakeFiles/huinya.dir
 
-build CMakeFiles/crush.dir/crush.c.obj: C_COMPILER__crush_Debug C$:/GitHub/Laboratory-works/Lazakovich$ V/Lab7/crush.c || cmake_object_order_depends_target_crush
-  DEP_FILE = CMakeFiles\crush.dir\crush.c.obj.d
+build CMakeFiles/huinya.dir/huinya.c.obj: C_COMPILER__huinya_Debug C$:/GitHub/Laboratory-works/Lazakovich$ V/Lab7/huinya.c || cmake_object_order_depends_target_huinya
+  DEP_FILE = CMakeFiles\huinya.dir\huinya.c.obj.d
   FLAGS = -g -fdiagnostics-color=always -std=gnu11
-  OBJECT_DIR = CMakeFiles\crush.dir
-  OBJECT_FILE_DIR = CMakeFiles\crush.dir
+  OBJECT_DIR = CMakeFiles\huinya.dir
+  OBJECT_FILE_DIR = CMakeFiles\huinya.dir
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target crush
+# Link build statements for EXECUTABLE target huinya
 
 
 #############################################
-# Link the executable crush.exe
+# Link the executable huinya.exe
 
-build crush.exe: C_EXECUTABLE_LINKER__crush_Debug CMakeFiles/crush.dir/crush.c.obj
+build huinya.exe: C_EXECUTABLE_LINKER__huinya_Debug CMakeFiles/huinya.dir/huinya.c.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
-  OBJECT_DIR = CMakeFiles\crush.dir
+  OBJECT_DIR = CMakeFiles\huinya.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
-  TARGET_FILE = crush.exe
-  TARGET_IMPLIB = libcrush.dll.a
-  TARGET_PDB = crush.exe.dbg
+  TARGET_FILE = huinya.exe
+  TARGET_IMPLIB = libhuinya.dll.a
+  TARGET_PDB = huinya.exe.dbg
 
 
 #############################################
@@ -132,7 +132,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
 # Target aliases.
 
-build crush: phony crush.exe
+build huinya: phony huinya.exe
 
 build main: phony main.exe
 
@@ -144,7 +144,7 @@ build main: phony main.exe
 #############################################
 # Folder: C:/GitHub/Laboratory-works/Lazakovich V/Lab7/cmake-build-debug
 
-build all: phony main.exe crush.exe
+build all: phony main.exe huinya.exe
 
 # =============================================================================
 # Built-in targets

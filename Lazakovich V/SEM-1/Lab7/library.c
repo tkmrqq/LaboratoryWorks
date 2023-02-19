@@ -18,7 +18,6 @@ char *inputString(int *length) {
             str = (char *) realloc(str, (pos + 1) * sizeof(char));
             return str;
         }
-
         str[pos] = ch;
         pos++;
         *length = pos;

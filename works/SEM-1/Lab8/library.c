@@ -1,4 +1,3 @@
-#include "library.h"
 #include <stdio.h>
 
 int length(char *str) {

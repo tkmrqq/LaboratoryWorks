@@ -49,8 +49,8 @@ cmake_ninja_workdir = C$:/GitHub/Laboratory-works/Lazakovich$ V/strFunctions/cma
 
 build cmake_object_order_depends_target_1: phony || CMakeFiles/1.dir
 
-build CMakeFiles/1.dir/strFoo.c.obj: C_COMPILER__1_Debug C$:/GitHub/Laboratory-works/Lazakovich$ V/strFunctions/strFoo.c || cmake_object_order_depends_target_1
-  DEP_FILE = CMakeFiles\1.dir\strFoo.c.obj.d
+build CMakeFiles/1.dir/tests.c.obj: C_COMPILER__1_Debug C$:/GitHub/Laboratory-works/Lazakovich$ V/strFunctions/tests.c || cmake_object_order_depends_target_1
+  DEP_FILE = CMakeFiles\1.dir\tests.c.obj.d
   FLAGS = -g -fdiagnostics-color=always -std=gnu11
   OBJECT_DIR = CMakeFiles\1.dir
   OBJECT_FILE_DIR = CMakeFiles\1.dir
@@ -63,7 +63,7 @@ build CMakeFiles/1.dir/strFoo.c.obj: C_COMPILER__1_Debug C$:/GitHub/Laboratory-w
 #############################################
 # Link the executable 1.exe
 
-build 1.exe: C_EXECUTABLE_LINKER__1_Debug CMakeFiles/1.dir/strFoo.c.obj
+build 1.exe: C_EXECUTABLE_LINKER__1_Debug CMakeFiles/1.dir/tests.c.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\1.dir
@@ -106,6 +106,39 @@ build 2.exe: C_EXECUTABLE_LINKER__2_Debug CMakeFiles/2.dir/allSorts.c.obj
   TARGET_IMPLIB = lib2.dll.a
   TARGET_PDB = 2.exe.dbg
 
+# =============================================================================
+# Object build statements for EXECUTABLE target 3
+
+
+#############################################
+# Order-only phony target for 3
+
+build cmake_object_order_depends_target_3: phony || CMakeFiles/3.dir
+
+build CMakeFiles/3.dir/t2.c.obj: C_COMPILER__3_Debug C$:/GitHub/Laboratory-works/Lazakovich$ V/strFunctions/t2.c || cmake_object_order_depends_target_3
+  DEP_FILE = CMakeFiles\3.dir\t2.c.obj.d
+  FLAGS = -g -fdiagnostics-color=always -std=gnu11
+  OBJECT_DIR = CMakeFiles\3.dir
+  OBJECT_FILE_DIR = CMakeFiles\3.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target 3
+
+
+#############################################
+# Link the executable 3.exe
+
+build 3.exe: C_EXECUTABLE_LINKER__3_Debug CMakeFiles/3.dir/t2.c.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\3.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = 3.exe
+  TARGET_IMPLIB = lib3.dll.a
+  TARGET_PDB = 3.exe.dbg
+
 
 #############################################
 # Utility command for edit_cache
@@ -136,6 +169,8 @@ build 1: phony 1.exe
 
 build 2: phony 2.exe
 
+build 3: phony 3.exe
+
 # =============================================================================
 # Folder targets.
 
@@ -144,7 +179,7 @@ build 2: phony 2.exe
 #############################################
 # Folder: C:/GitHub/Laboratory-works/Lazakovich V/strFunctions/cmake-build-debug
 
-build all: phony 1.exe 2.exe
+build all: phony 1.exe 2.exe 3.exe
 
 # =============================================================================
 # Built-in targets

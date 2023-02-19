@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "c:/GitHub/Laboratory-works/Lazakovich V/Lab8/cmake-build-debug"
+			"value" : "c:/GitHub/Laboratory-works/works/SEM-1/Lab8/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -431,7 +431,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/GitHub/Laboratory-works/Lazakovich V/Lab8/cmake-build-debug/CMakeFiles/pkgRedirects"
+			"value" : "C:/GitHub/Laboratory-works/works/SEM-1/Lab8/cmake-build-debug/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -503,7 +503,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/GitHub/Laboratory-works/Lazakovich V/Lab8"
+			"value" : "C:/GitHub/Laboratory-works/works/SEM-1/Lab8"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -1131,7 +1131,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/GitHub/Laboratory-works/Lazakovich V/Lab8/cmake-build-debug"
+			"value" : "C:/GitHub/Laboratory-works/works/SEM-1/Lab8/cmake-build-debug"
 		},
 		{
 			"name" : "untitled1_IS_TOP_LEVEL",
@@ -1155,7 +1155,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/GitHub/Laboratory-works/Lazakovich V/Lab8"
+			"value" : "C:/GitHub/Laboratory-works/works/SEM-1/Lab8"
 		}
 	],
 	"kind" : "cache",

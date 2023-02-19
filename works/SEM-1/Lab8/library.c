@@ -54,23 +54,3 @@ void insertionSort(char **str, int size) {
         str[j + 1] = temp;
     }
 }
-
-/*
-void insertionSort(char **str, int n) {
-    char *sortTmp;
-    int i, key, j;
-    for (i = 1; i < n; i++) {
-        key = size_max_word(*str);
-        j = i - 1;
-
-        while (j >= 0 && arr[j] > key) {
-            arr[j + 1] = arr[j];
-            j = j - 1;
-
-            sortTmp = str[i];
-            str[i] = str[j];
-            str[j] = sortTmp;
-        }
-        arr[j + 1] = key;
-    }
-}*/

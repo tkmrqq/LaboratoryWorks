@@ -1,4 +1,4 @@
-# Install script for directory: C:/GitHub/Laboratory-works/Lazakovich V/Lab8
+# Install script for directory: C:/GitHub/Laboratory-works/works/SEM-1/Lab8
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/GitHub/Laboratory-works/Lazakovich V/Lab8/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/GitHub/Laboratory-works/works/SEM-1/Lab8/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

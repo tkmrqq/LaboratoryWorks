@@ -3,4 +3,4 @@ project(Secondterm C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(Laboratory-works works/SEM-2/main.c)
+add_executable(Laboratory-works src/LAB8/main.c)

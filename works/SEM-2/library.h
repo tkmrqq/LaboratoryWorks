@@ -15,11 +15,11 @@ typedef struct character_t {
 character createCharacter(int hp, int atk, int armor, const char *name, Element element);
 char toLower(char in);
 void printCharacter(character c[], int n);
-int compareByHp(character *a, character *b);
-int compareByAtk(character *a, character *b);
-int compareByArmor(character *a, character *b);
-int compareByName(character *a, character *b);
-int compareByElement(character *a, character *b);
+int compareByHp(const character *a, const character *b);
+int compareByAtk(const character *a, const character *b);
+int compareByArmor(const character *a, const character *b);
+int compareByName(const character *a, const character *b);
+int compareByElement(const character *a, const character *b);
 char *getSortField();
 int chooseSort();
 void sortCharacters(character characters[], int numChars);

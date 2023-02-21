@@ -12,13 +12,13 @@ character createCharacter(int hp, int atk, int armor, const char *name, Element 
     c.atk = atk;
     c.armor = armor;
     c.name = (char *) malloc(strlen(name) + 1);//выделение памяти для хранения имени
-    strcpy(c.name, name);                   //копирование имени в выделенную память
+    strcpy_s(c.name, sizeof(c.name), name);    //копирование имени в выделенную память
     c.element = element;
     return c;
 }
 
 void printCharacter(character c[], int n) {
-    const char* ELEMENT_NAMES[] = {"PYRO","ELECTRO","DENDRO","CRYO"};
+    const char *ELEMENT_NAMES[] = {"PYRO", "ELECTRO", "DENDRO", "CRYO"};
     for (int i = 0; i < n; ++i) {
         printf("===============\n");
         printf("Name: %s\nHP: %d\nAttack: %d\nArmor: %d\nElement: %s\n", c[i].name, c[i].hp, c[i].atk, c[i].armor, ELEMENT_NAMES[c[i].element]);
@@ -26,23 +26,23 @@ void printCharacter(character c[], int n) {
 }
 
 //сравниваем хар-ки
-int compareByHp(character *a, character *b) {
+int compareByHp(const character *a, const character *b) {
     return a->hp - b->hp;
 }
 
-int compareByAtk(character *a, character *b) {
+int compareByAtk(const character *a, const character *b) {
     return a->atk - b->atk;
 }
 
-int compareByArmor(character *a, character *b) {
+int compareByArmor(const character *a, const character *b) {
     return a->armor - b->armor;
 }
 
-int compareByName(character *a, character *b) {
+int compareByName(const character *a, const character *b) {
     return strcmp(a->name, b->name);
 }
 
-int compareByElement(character *a, character *b){
+int compareByElement(const character *a, const character *b) {
     return a->element - b->element;
 }
 
@@ -57,7 +57,7 @@ char *getSortField() {
 }
 
 int chooseSort() {
-    char *SortField = getSortField();
+    const char *SortField = getSortField();
     if (strcmp(SortField, "hp") == 0)
         return 1;
     else if (strcmp(SortField, "atk") == 0)
@@ -66,7 +66,7 @@ int chooseSort() {
         return 3;
     else if (strcmp(SortField, "name") == 0)
         return 4;
-    else if(strcmp(SortField, "el") == 0)
+    else if (strcmp(SortField, "el") == 0)
         return 5;
     return -1;
 }
@@ -90,7 +90,7 @@ void sortCharacters(character characters[], int numChars) {
             qsort(characters, numChars, sizeof(character), (int (*)(const void *, const void *)) compareByName);
             break;
         }
-        case 5:{
+        case 5: {
             qsort(characters, numChars, sizeof(character), (int (*)(const void *, const void *)) compareByElement);
             break;
         }
@@ -102,14 +102,14 @@ void sortCharacters(character characters[], int numChars) {
 }
 
 void Remove(character characters[], int *len) {
-    char *name = malloc(0);
+    char name[6];
     printf("Input name of structure:\n(available structures):\n");
     for (int i = 0; i < *len; ++i) {
         printf("[%d]: %s\t", (i + 1), characters[i].name);
     }
     printf("\n");
     rewind(stdin);
-    gets(name);
+    scanf_s("%6s", name);
 
     for (int i = 0; i < *len; i++) {
         if (!strcmp(characters[i].name, name)) {

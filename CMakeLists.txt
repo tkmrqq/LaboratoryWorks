@@ -3,4 +3,4 @@ project(Laboratory-works C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(Laboratory-works src/Lab8/main.c)
+add_executable(Laboratory-works src/Lab8/main.c src/Lab8/library.c src/Lab8/header.h)

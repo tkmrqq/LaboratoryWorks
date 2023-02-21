@@ -82,8 +82,14 @@ build SEM_2.exe: C_EXECUTABLE_LINKER__SEM_2_Debug CMakeFiles/SEM_2.dir/main.c.ob
 
 build cmake_object_order_depends_target_2: phony || CMakeFiles/2.dir
 
-build CMakeFiles/2.dir/main2.c.obj: C_COMPILER__2_Debug C$:/GitHub/Laboratory-works/works/SEM-2/main2.c || cmake_object_order_depends_target_2
-  DEP_FILE = CMakeFiles\2.dir\main2.c.obj.d
+build CMakeFiles/2.dir/main.c.obj: C_COMPILER__2_Debug C$:/GitHub/Laboratory-works/works/SEM-2/main.c || cmake_object_order_depends_target_2
+  DEP_FILE = CMakeFiles\2.dir\main.c.obj.d
+  FLAGS = -g -fdiagnostics-color=always -std=gnu2x
+  OBJECT_DIR = CMakeFiles\2.dir
+  OBJECT_FILE_DIR = CMakeFiles\2.dir
+
+build CMakeFiles/2.dir/functions.c.obj: C_COMPILER__2_Debug C$:/GitHub/Laboratory-works/works/SEM-2/functions.c || cmake_object_order_depends_target_2
+  DEP_FILE = CMakeFiles\2.dir\functions.c.obj.d
   FLAGS = -g -fdiagnostics-color=always -std=gnu2x
   OBJECT_DIR = CMakeFiles\2.dir
   OBJECT_FILE_DIR = CMakeFiles\2.dir
@@ -96,7 +102,7 @@ build CMakeFiles/2.dir/main2.c.obj: C_COMPILER__2_Debug C$:/GitHub/Laboratory-wo
 #############################################
 # Link the executable 2.exe
 
-build 2.exe: C_EXECUTABLE_LINKER__2_Debug CMakeFiles/2.dir/main2.c.obj
+build 2.exe: C_EXECUTABLE_LINKER__2_Debug CMakeFiles/2.dir/main.c.obj CMakeFiles/2.dir/functions.c.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\2.dir

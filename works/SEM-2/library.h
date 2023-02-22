@@ -12,8 +12,10 @@ typedef struct character_t {
     Element element;
 } character;
 
+character * initArr(int size);
+char* get_string();
+int createArray(character characters[]);
 int additionalSize();
-character createCharacter(int hp, int atk, int armor, const char *name, Element element);
 char toLower(char in);
 void printCharacter(character c[], int n);
 int compareByHp(const character *a, const character *b);

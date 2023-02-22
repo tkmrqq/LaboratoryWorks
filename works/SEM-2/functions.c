@@ -18,7 +18,7 @@ character createCharacter(int hp, int atk, int armor, const char *name, Element 
 }
 
 void printCharacter(character c[], int n) {
-    const char *ELEMENT_NAMES[] = {"PYRO", "ELECTRO", "DENDRO", "CRYO"};
+    const char *ELEMENT_NAMES[] = {"CRYO", "PYRO", "ELECTRO", "DENDRO"};
     for (int i = 0; i < n; ++i) {
         printf("===============\n");
         printf("Name: %s\nHP: %d\nAttack: %d\nArmor: %d\nElement: %s\n", c[i].name, c[i].hp, c[i].atk, c[i].armor, ELEMENT_NAMES[c[i].element]);
@@ -101,15 +101,21 @@ void sortCharacters(character characters[], int numChars) {
     }
 }
 
+int additionalSize(){
+    printf("How many structures do you want to input?");
+    int size = scanf_s("%d", &size);
+    return size;
+}
+
 void Remove(character characters[], int *len) {
-    char name[6];
+    char name[10];
     printf("Input name of structure:\n(available structures):\n");
     for (int i = 0; i < *len; ++i) {
         printf("[%d]: %s\t", (i + 1), characters[i].name);
     }
     printf("\n");
     rewind(stdin);
-    scanf_s("%6s", name);
+    scanf_s("%10s", name);
 
     for (int i = 0; i < *len; i++) {
         if (!strcmp(characters[i].name, name)) {
@@ -126,9 +132,9 @@ void Remove(character characters[], int *len) {
 void menu(character characters[], int n) {
     int key;
     while (1) {
-        printf("What do you want from my program?\n1) [Show structure]\t2) [Sort structure]\t3) [Delete structure]\t4)[Exit]\n");
-        while (scanf_s("%d", &key) != 1) {
-            fprintf(stderr, "Invalid field type\n");
+        printf("What do you want from my program?\n1) [Show structure]\t2) [Sort structure]\t3) [Delete structure]\t4) [Add Structure]\t5) [Exit]\n");
+        while (scanf_s("%d", &key) != 1 || key > 5 || key <= 0) {
+            fprintf(stderr, "Invalid input!\n");
             rewind(stdin);
         }
         switch (key) {
@@ -147,11 +153,33 @@ void menu(character characters[], int n) {
                 break;
             }
             case 4: {
+                int size = additionalSize();
+                int hp, atk, armor;
+                const char *name;
+                Element element;
+                characters = realloc(characters, (size+5) * sizeof(character));
+                for (int i = 0; i < size; i++) {
+                    printf("Input HP:");
+                    scanf_s("%d", &hp);
+                    printf("Input ATK:");
+                    scanf_s("%d", &atk);
+                    printf("Input Armor:");
+                    scanf_s("%d", &armor);
+                    printf("Input Name:");
+                    scanf_s("%10s", &name);
+                    printf("Input Element");
+                    scanf_s("%d", &element);
+                    characters[i + 5] = createCharacter(hp, atk, armor, name, element);
+                    rewind(stdin);
+                }
+                printCharacter(characters, n+size);
+                break;
+            }
+            case 5: {
                 rewind(stdin);
                 exit(EXIT_SUCCESS);
             }
             default: {
-                fprintf(stderr, "Invalid input\n");
                 exit(EXIT_FAILURE);
             }
         }

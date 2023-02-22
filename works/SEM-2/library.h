@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-typedef enum { PYRO, ELECTRO, DENDRO, CRYO } Element;
+typedef enum {CRYO, PYRO, ELECTRO, DENDRO} Element;
 
 typedef struct character_t {
     int hp;
@@ -12,6 +12,7 @@ typedef struct character_t {
     Element element;
 } character;
 
+int additionalSize();
 character createCharacter(int hp, int atk, int armor, const char *name, Element element);
 char toLower(char in);
 void printCharacter(character c[], int n);

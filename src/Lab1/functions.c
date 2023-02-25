@@ -201,7 +201,7 @@ void additionalSize(int *size) {
    scanf_s("%d", size);
 }
 
-__attribute__((noreturn)) void menu(character *characters, int n) {
+void menu(character *characters, int n) {
     int key;
     while (1) {
         printf("What do you want from my program?\n1) [Show structure]\t2) [Sort structure]\t3) [Delete structure]\t4) [Add Structure]\t5) [Exit]\n");

@@ -6,7 +6,7 @@ char toLower(char ch) {
     return ch;
 }
 
-void printCharacter(character c[], int n) {
+void printCharacter(character *c, int n) {
     const char *ELEMENT_NAMES[] = {"CRYO", "PYRO", "ELECTRO", "DENDRO"};
     for (int i = 0; i < n; ++i) {
         printf("===============\n");
@@ -60,11 +60,12 @@ int compareByNameHp(const character * a, const character * b) {
 }
 
 char *inputString() {
-    int num = 256, pos = 0;
+    int num = 256;
+    int pos = 0;
     char *str = (char *) calloc(num, sizeof(char));
     char ch;
     while (1) {
-        ch = getchar();
+        ch = (char)getchar();
         if (ch == '\n') {
             str[pos] = '\0';
             str = (char *) realloc(str, (pos + 1) * sizeof(char));
@@ -163,6 +164,7 @@ void sortCharacters(character *characters, int numChars) {
         }
         case 6:{
             qsort(characters, numChars, sizeof(character), (int (*)(const void *, const void *)) compareByNameHp);
+            break;
         }
         default: {
             fprintf(stderr, "Invalid field type\n");
@@ -171,7 +173,7 @@ void sortCharacters(character *characters, int numChars) {
     }
 }
 
-void Remove(character characters[], int *len) {
+void Remove(character *characters, int *len) {
     char name[10];
     printf("Input name of structure:\n(available structures):\n");
     for (int i = 0; i < *len; ++i) {
@@ -199,7 +201,7 @@ void additionalSize(int *size) {
    scanf_s("%d", size);
 }
 
-void menu(character characters[], int n) {
+__attribute__((noreturn)) void menu(character *characters, int n) {
     int key;
     while (1) {
         printf("What do you want from my program?\n1) [Show structure]\t2) [Sort structure]\t3) [Delete structure]\t4) [Add Structure]\t5) [Exit]\n");

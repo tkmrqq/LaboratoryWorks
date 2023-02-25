@@ -12,10 +12,10 @@ typedef struct character_t {
     Element element;
 } character;
 
+char *inputString();
 character * initArr(int size);
-char* get_string();
-int createArray(character characters[]);
-int additionalSize();
+void createCharacter(character characters[], int numCharacters);
+void additionalSize(int *size);
 char toLower(char in);
 void printCharacter(character c[], int n);
 int compareByHp(const character *a, const character *b);

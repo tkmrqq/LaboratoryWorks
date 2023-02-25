@@ -1,9 +1,9 @@
 #include "library.h"
 
-char toLower(char in) {
-    if (in <= 'Z' && in >= 'A')
-        return in - ('Z' - 'z');
-    return in;
+char toLower(char ch) {
+    if (ch <= 'Z' && ch >= 'A')
+        return ch - ('Z' - 'z');
+    return ch;
 }
 
 void printCharacter(character c[], int n) {
@@ -59,6 +59,58 @@ int compareByNameHp(const character * a, const character * b) {
     }
 }
 
+char *inputString() {
+    int num = 256, pos = 0;
+    char *str = (char *) calloc(num, sizeof(char));
+    char ch;
+    while (1) {
+        ch = getchar();
+        if (ch == '\n') {
+            str[pos] = '\0';
+            str = (char *) realloc(str, (pos + 1) * sizeof(char));
+            return str;
+        }
+
+        str[pos] = ch;
+        pos++;
+        if (pos == 256)
+            str = (char *) realloc(str, (pos + 1) * sizeof(char));
+    }
+}
+
+void createCharacter(character *characters, int numCharacters) {
+    for (int i = 0; i < numCharacters; i++) {
+        printf("Enter HP:");
+        scanf_s("%d", &characters[i].hp); //&(characters+i)->hp)
+
+        printf("Enter armor:");
+        scanf_s("%d", &characters[i].armor);
+
+        printf("Enter ATK:");
+        scanf_s("%d", &characters[i].atk);
+
+        printf("Enter name:");
+        getchar();
+        characters[i].name = inputString();
+
+        printf("Enter element (PYRO, ELECTRO, DENDRO, CRYO):");
+        char element[10];
+        fgets(element, 10, stdin);
+        if (strcmp(element, "PYRO\n") == 0) {
+            characters[i].element = PYRO;
+        } else if (strcmp(element, "ELECTRO\n") == 0) {
+            characters[i].element = ELECTRO;
+        } else if (strcmp(element, "DENDRO\n") == 0) {
+            characters[i].element = DENDRO;
+        } else if (strcmp(element, "CRYO\n") == 0) {
+            characters[i].element = CRYO;
+        } else {
+            printf("Invalid element input. Setting to PYRO by default.\n");
+            characters[i].element = PYRO;
+        }
+    }
+}
+
 char *getSortField() {
     static char SortField[5];
     printf("Enter field to sort by (hp, atk, armor, name, el, nmhp):");
@@ -86,7 +138,7 @@ int chooseSort() {
     return -1;
 }
 
-void sortCharacters(character characters[], int numChars) {
+void sortCharacters(character *characters, int numChars) {
     int field = chooseSort();
     switch (field) {
         case 1: {
@@ -141,117 +193,10 @@ void Remove(character characters[], int *len) {
     }
 }
 
-char* get_string()
-{
-    int num = 256;
-    char* string = (char*)calloc(num, sizeof(char));
-    char ch;
-    int pos = 0;
-    while (1)
-    {
-        ch = getchar();
-        if (ch == '\n')
-        {
-            string[pos] = '\0';
-            string = (char*)realloc(string, (pos + 1) * sizeof(char));
-            return string;
-        }
 
-        string[pos] = ch;
-        pos++;
-        if (pos == 256)
-            string = (char*)realloc(string, (pos + 1) * sizeof(char));
-    }
-}
-
-void get_int(int* x)
-{
-    while (!scanf_s("%d", x) || getchar() != '\n' || *x <= 0)
-    {
-        rewind(stdin);
-        fprintf(stderr, "Invalid field type\n");
-    }
-}
-
-
-int createArray(character characters[])
-{
-    int size = 0;
-    int size_z = 256;
-    printf("Input name of characters, to exit enter: \'s\'\n");
-    char* z = (char*)calloc(size_z, sizeof(char));
-    int i = 0;
-    while (1)
-    {
-        char letter;
-        letter = getchar();
-        if (letter != '\n')
-        {
-            if (i < 256)
-            {
-                z[i] = letter;
-                i++;
-            }
-            else
-            {
-                size_z++;
-                z = (char*)malloc(size_z * sizeof(char));
-                z[i] = letter;
-                i++;
-            }
-        }
-        else
-        {
-            z[i] = '\0';
-            if (z[0] == 's' && z[1] == '\0')
-            {
-                break;
-            }
-            characters[size].name = z;
-            printf("Input hp of character:");
-            get_int(&characters[size].hp);
-            printf("Input attack of character:");
-            get_int(&characters[size].atk);
-            printf("Input armor of character:");
-            get_int(&characters[size].armor);
-            printf("Choose element of character:(0-Cryo\t1-Pyro\t2-Electro\t3-Dendro)\n");
-            scanf_s("%d", &characters[size].element);
-//            z = (char*)calloc(256, sizeof(char));
-            size++;
-            printf("\nInput name of characters, to exit enter: \'s\'");
-            i = 0;
-        }
-    }
-    return size;
-}
-
-/*character *createArray(int size) {
-    character *characters = malloc(sizeof(character) * size);
-
-    for (int i = 0; i < size; i++) {
-        printf("Input name of [%d] character: ", i + 1);
-        scanf_s("%s", characters[i].name);
-
-        printf("Input HP of [%d] character : ", i + 1);
-        scanf_s("%d", &characters[i].hp);
-
-        printf("Input attack of [%d] character : ", i + 1);
-        scanf_s("%d", &characters[i].atk);
-
-        printf("Input armor of [%d] character : ", i + 1);
-        scanf_s("%d", &characters[i].armor);
-
-        printf("Input element of [%d] character (0-CRYO, 1-PYRO, 2-ELECTRO, 3-DENDRO): ", i + 1);
-        scanf_s("%d", &characters[i].element);
-    }
-
-    return characters;
-}*/
-
-int additionalSize() {
+void additionalSize(int *size) {
     printf("How many structures do you want to input?\n");
-    int size = scanf_s("%d", &size);
-    return size;
+   scanf_s("%d", size);
 }
 
 void menu(character characters[], int n) {

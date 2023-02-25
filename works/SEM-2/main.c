@@ -1,9 +1,10 @@
 #include "library.h"
 
 int main() {
-    int size_add = additionalSize();
-    character *characters = initArr(size_add);
-    int size = createArray(characters);
+    int size = 0;
+    additionalSize(&size);
+    character *characters = initArr(size);
+    createCharacter(characters, size);
     menu(characters, size);
     free(characters);
     return 0;

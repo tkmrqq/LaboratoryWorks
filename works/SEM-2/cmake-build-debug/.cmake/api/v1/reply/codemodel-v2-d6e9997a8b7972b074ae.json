@@ -15,8 +15,7 @@
 					"source" : ".",
 					"targetIndexes" : 
 					[
-						0,
-						1
+						0
 					]
 				}
 			],
@@ -31,8 +30,7 @@
 					"name" : "SEM_2",
 					"targetIndexes" : 
 					[
-						0,
-						1
+						0
 					]
 				}
 			],
@@ -41,15 +39,8 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "2::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-2-Debug-305cd2cae4ecd1ed916a.json",
+					"jsonFile" : "target-2-Debug-8ffa7b50dc6f6cd275f9.json",
 					"name" : "2",
-					"projectIndex" : 0
-				},
-				{
-					"directoryIndex" : 0,
-					"id" : "SEM_2::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-SEM_2-Debug-85248f3e8ea7332ac331.json",
-					"name" : "SEM_2",
 					"projectIndex" : 0
 				}
 			]

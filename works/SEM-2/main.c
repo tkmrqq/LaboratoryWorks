@@ -2,7 +2,7 @@
 
 int main() {
     int size = 0;
-    additionalSize(&size);
+    initSize(&size);
     character *characters = initArr(size);
     createCharacter(characters, size);
     menu(characters, size);

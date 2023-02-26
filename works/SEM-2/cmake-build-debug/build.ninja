@@ -41,39 +41,6 @@ include CMakeFiles/rules.ninja
 
 cmake_ninja_workdir = C$:/GitHub/Laboratory-works/works/SEM-2/cmake-build-debug/
 # =============================================================================
-# Object build statements for EXECUTABLE target SEM_2
-
-
-#############################################
-# Order-only phony target for SEM_2
-
-build cmake_object_order_depends_target_SEM_2: phony || CMakeFiles/SEM_2.dir
-
-build CMakeFiles/SEM_2.dir/main.c.obj: C_COMPILER__SEM_2_Debug C$:/GitHub/Laboratory-works/works/SEM-2/main.c || cmake_object_order_depends_target_SEM_2
-  DEP_FILE = CMakeFiles\SEM_2.dir\main.c.obj.d
-  FLAGS = -g -fdiagnostics-color=always -std=gnu2x
-  OBJECT_DIR = CMakeFiles\SEM_2.dir
-  OBJECT_FILE_DIR = CMakeFiles\SEM_2.dir
-
-
-# =============================================================================
-# Link build statements for EXECUTABLE target SEM_2
-
-
-#############################################
-# Link the executable SEM_2.exe
-
-build SEM_2.exe: C_EXECUTABLE_LINKER__SEM_2_Debug CMakeFiles/SEM_2.dir/main.c.obj
-  FLAGS = -g
-  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
-  OBJECT_DIR = CMakeFiles\SEM_2.dir
-  POST_BUILD = cd .
-  PRE_LINK = cd .
-  TARGET_FILE = SEM_2.exe
-  TARGET_IMPLIB = libSEM_2.dll.a
-  TARGET_PDB = SEM_2.exe.dbg
-
-# =============================================================================
 # Object build statements for EXECUTABLE target 2
 
 
@@ -140,8 +107,6 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 
 build 2: phony 2.exe
 
-build SEM_2: phony SEM_2.exe
-
 # =============================================================================
 # Folder targets.
 
@@ -150,7 +115,7 @@ build SEM_2: phony SEM_2.exe
 #############################################
 # Folder: C:/GitHub/Laboratory-works/works/SEM-2/cmake-build-debug
 
-build all: phony SEM_2.exe 2.exe
+build all: phony 2.exe
 
 # =============================================================================
 # Built-in targets

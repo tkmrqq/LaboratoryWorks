@@ -1,5 +1,14 @@
 #include "library.h"
 
+int check() {
+    int x;
+    while (scanf_s("%d", &x) != 1 || x < 1 || getchar() != '\n') {
+        fprintf(stderr, "Invalid input! Please try again.\n");
+        rewind(stdin);
+    }
+    return x;
+}
+
 char toLower(char ch) {
     if (ch <= 'Z' && ch >= 'A')
         return ch - ('Z' - 'z');
@@ -14,9 +23,8 @@ void printCharacter(character *c, int n) {
     }
 }
 
-character * initArr(int size)
-{
-    return (character *)malloc(size * sizeof(character));
+character *initArr(int size) {
+    return (character *) malloc(size * sizeof(character));
 }
 
 //сравниваем хар-ки
@@ -41,20 +49,17 @@ int compareByName(const character *a, const character *b) {
 int compareByElement(const character *a, const character *b) {
     if (b->element < a->element) {
         return 1;
-    }
-    else if (a->element < b->element) {
+    } else if (a->element < b->element) {
         return -1;
-    }
-    else {
+    } else {
         return (b->element < a->element) - (a->element < b->element);
     }
 }
 
-int compareByNameHp(const character * a, const character * b) {
+int compareByNameHp(const character *a, const character *b) {
     if ((a->hp > b->hp) - (a->hp < b->hp) != 0) {
         return (a->hp > b->hp) - (a->hp < b->hp);
-    }
-    else {
+    } else {
         return strcmp(a->name, b->name);
     }
 }
@@ -65,7 +70,7 @@ char *inputString() {
     char *str = (char *) calloc(num, sizeof(char));
     char ch;
     while (1) {
-        ch = (char)getchar();
+        ch = (char) getchar();
         if (ch == '\n') {
             str[pos] = '\0';
             str = (char *) realloc(str, (pos + 1) * sizeof(char));
@@ -81,14 +86,15 @@ char *inputString() {
 
 void createCharacter(character *characters, int numCharacters) {
     for (int i = 0; i < numCharacters; i++) {
+        printf("Input the characteristics of the [%d] character\n", i + 1);
         printf("Enter HP:");
-        scanf_s("%d", &characters[i].hp); //&(characters+i)->hp)
+        characters[i].hp = check();//&(characters+i)->hp)
 
         printf("Enter armor:");
-        scanf_s("%d", &characters[i].armor);
+        characters[i].armor = check();
 
         printf("Enter ATK:");
-        scanf_s("%d", &characters[i].atk);
+        characters[i].atk = check();
 
         printf("Enter name:");
         getchar();
@@ -134,7 +140,7 @@ int chooseSort() {
         return 4;
     else if (strcmp(SortField, "el") == 0)
         return 5;
-    else if(strcmp(SortField, "nmhp") == 0)
+    else if (strcmp(SortField, "nmhp") == 0)
         return 6;
     return -1;
 }
@@ -162,7 +168,7 @@ void sortCharacters(character *characters, int numChars) {
             qsort(characters, numChars, sizeof(character), (int (*)(const void *, const void *)) compareByElement);
             break;
         }
-        case 6:{
+        case 6: {
             qsort(characters, numChars, sizeof(character), (int (*)(const void *, const void *)) compareByNameHp);
             break;
         }
@@ -196,15 +202,15 @@ void Remove(character *characters, int *len) {
 }
 
 
-void additionalSize(int *size) {
+void initSize(int *size) {
     printf("How many structures do you want to input?\n");
-   scanf_s("%d", size);
+    scanf_s("%d", size);
 }
 
 void menu(character *characters, int n) {
     int key;
     while (1) {
-        printf("What do you want from my program?\n1) [Show structure]\t2) [Sort structure]\t3) [Delete structure]\t4) [Add Structure]\t5) [Exit]\n");
+        printf("What do you want from my program?\n1) [Show structure]\t2) [Sort structure]\t3) [Delete structure]\t4) [Exit]\n");
         while (scanf_s("%d", &key) != 1 || key > 5 || key <= 0) {
             fprintf(stderr, "Invalid input!\n");
             rewind(stdin);
@@ -225,9 +231,6 @@ void menu(character *characters, int n) {
                 break;
             }
             case 4: {
-                break;
-            }
-            case 5: {
                 rewind(stdin);
                 exit(EXIT_SUCCESS);
             }

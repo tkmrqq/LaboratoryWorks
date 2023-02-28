@@ -10,14 +10,14 @@ int check() {
 }
 
 char toLower(char ch) {
-    if (ch <= 'Z' && ch >= 'A')
+    if (ch >= 'A'  &&  ch <= 'Z')
         return ch - ('Z' - 'z');
     return ch;
 }
 
-void printCharacter(character *c, int n) {
+void printCharacter(character *c, int size) {
     const char *ELEMENT_NAMES[] = {"CRYO", "PYRO", "ELECTRO", "DENDRO"};
-    for (int i = 0; i < n; ++i) {
+    for (int i = 0; i < size; ++i) {
         printf("===============\n");
         printf("Name: %s\nHP: %d\nAttack: %d\nArmor: %d\nElement: %s\n", c[i].name, c[i].hp, c[i].atk, c[i].armor, ELEMENT_NAMES[c[i].element]);
     }
@@ -64,6 +64,14 @@ int compareByNameHp(const character *a, const character *b) {
     }
 }
 
+int compareByAtkHp(const character *a, const character *b) {
+    if (a->atk != b->atk) {
+        return a->atk - b->atk;
+    } else {
+        return a->hp - b->hp;
+    }
+}
+
 char *inputString() {
     int num = 256;
     int pos = 0;
@@ -84,8 +92,9 @@ char *inputString() {
     }
 }
 
-void createCharacter(character *characters, int numCharacters) {
-    for (int i = 0; i < numCharacters; i++) {
+void createCharacter(character *characters, int size, int k) {
+
+    for (int i = k; i < size; i++) {
         printf("Input the characteristics of the [%d] character\n", i + 1);
         printf("Enter HP:");
         characters[i].hp = check();//&(characters+i)->hp)
@@ -97,19 +106,22 @@ void createCharacter(character *characters, int numCharacters) {
         characters[i].atk = check();
 
         printf("Enter name:");
-        getchar();
         characters[i].name = inputString();
 
-        printf("Enter element (PYRO, ELECTRO, DENDRO, CRYO):");
+        printf("Enter element (PYRO, ELECTRO, DENDRO, CRYO):\n");
         char element[10];
+        rewind(stdin);
         fgets(element, 10, stdin);
-        if (strcmp(element, "PYRO\n") == 0) {
+        for (int j = 0; j < 10; ++j) {
+            element[j] = toLower(element[j]);
+        }
+        if (strcmp(element, "pyro\n") == 0) {
             characters[i].element = PYRO;
-        } else if (strcmp(element, "ELECTRO\n") == 0) {
+        } else if (strcmp(element, "electro\n") == 0) {
             characters[i].element = ELECTRO;
-        } else if (strcmp(element, "DENDRO\n") == 0) {
+        } else if (strcmp(element, "dendro\n") == 0) {
             characters[i].element = DENDRO;
-        } else if (strcmp(element, "CRYO\n") == 0) {
+        } else if (strcmp(element, "cryo\n") == 0) {
             characters[i].element = CRYO;
         } else {
             printf("Invalid element input. Setting to PYRO by default.\n");
@@ -119,57 +131,64 @@ void createCharacter(character *characters, int numCharacters) {
 }
 
 char *getSortField() {
-    static char SortField[5];
-    printf("Enter field to sort by (hp, atk, armor, name, el, nmhp):");
-    scanf_s("%5s", SortField);
-    for (int i = 0; i < 5; ++i) {
-        SortField[i] = toLower(SortField[i]);
+    static char sortField[8];
+    printf("Enter field to sort by (hp, atk, armor, name, el, nm*hp, atk*hp):");
+    rewind(stdin);
+    fgets(sortField, 8, stdin);
+    for (int i = 0; i < 6; ++i) {
+        sortField[i] = toLower(sortField[i]);
     }
-    return SortField;
+    return sortField;
 }
 
 int chooseSort() {
-    const char *SortField = getSortField();
-    if (strcmp(SortField, "hp") == 0)
+    char *sortField = getSortField();
+    if (strcmp(sortField, "hp\n") == 0)
         return 1;
-    else if (strcmp(SortField, "atk") == 0)
+    else if (strcmp(sortField, "atk\n") == 0)
         return 2;
-    else if (strcmp(SortField, "armor") == 0)
+    else if (strcmp(sortField, "armor\n") == 0)
         return 3;
-    else if (strcmp(SortField, "name") == 0)
+    else if (strcmp(sortField, "name\n") == 0)
         return 4;
-    else if (strcmp(SortField, "el") == 0)
+    else if (strcmp(sortField, "el\n") == 0)
         return 5;
-    else if (strcmp(SortField, "nmhp") == 0)
+    else if (strcmp(sortField, "nm*hp\n") == 0)
         return 6;
+    else if(strcmp(sortField, "atk*hp\n") == 0)
+        return 7;
     return -1;
 }
 
-void sortCharacters(character *characters, int numChars) {
+void sortCharacters(character *characters, int size) {
     int field = chooseSort();
     switch (field) {
         case 1: {
-            qsort(characters, numChars, sizeof(character), (int (*)(const void *, const void *)) compareByHp);
+            qsort(characters, size, sizeof(character), (int (*)(const void *, const void *)) compareByHp);
             break;
         }
         case 2: {
-            qsort(characters, numChars, sizeof(character), (int (*)(const void *, const void *)) compareByAtk);
+            qsort(characters, size, sizeof(character), (int (*)(const void *, const void *)) compareByAtk);
             break;
         }
         case 3: {
-            qsort(characters, numChars, sizeof(character), (int (*)(const void *, const void *)) compareByArmor);
+            qsort(characters, size, sizeof(character), (int (*)(const void *, const void *)) compareByArmor);
             break;
         }
         case 4: {
-            qsort(characters, numChars, sizeof(character), (int (*)(const void *, const void *)) compareByName);
+            qsort(characters, size, sizeof(character), (int (*)(const void *, const void *)) compareByName);
             break;
         }
         case 5: {
-            qsort(characters, numChars, sizeof(character), (int (*)(const void *, const void *)) compareByElement);
+            qsort(characters, size, sizeof(character), (int (*)(const void *, const void *)) compareByElement);
             break;
         }
         case 6: {
-            qsort(characters, numChars, sizeof(character), (int (*)(const void *, const void *)) compareByNameHp);
+            qsort(characters, size, sizeof(character), (int (*)(const void *, const void *)) compareByNameHp);
+            break;
+        }
+        case 7:{
+            qsort(characters, size, sizeof(character), (int (*)(const void *, const void *)) compareByAtkHp);
             break;
         }
         default: {
@@ -188,7 +207,6 @@ void Remove(character *characters, int *len) {
     printf("\n");
     rewind(stdin);
     scanf_s("%10s", name);
-
     for (int i = 0; i < *len; i++) {
         if (!strcmp(characters[i].name, name)) {
 
@@ -201,36 +219,50 @@ void Remove(character *characters, int *len) {
     }
 }
 
+void addStructure(character **characters, int *size) {
+    int temp = *size;
+    int choice;
+    printf("Hom many structures do you want to add?\n");
+    choice = check();
+    *size = *size + choice;
+    *characters = (character *) realloc(*characters, (*size) * sizeof(character));
+    createCharacter(*characters, *size, temp);
+}
 
 void initSize(int *size) {
     printf("How many structures do you want to input?\n");
-    scanf_s("%d", size);
+    *size = check();
 }
 
-void menu(character *characters, int n) {
+void menu(character *characters, int size) {
     int key;
     while (1) {
-        printf("What do you want from my program?\n1) [Show structure]\t2) [Sort structure]\t3) [Delete structure]\t4) [Exit]\n");
+        printf("\nWhat do you want from my program?\n1) [Show structure]\t2) [Sort structure]\t3) [Delete structure]\t4) [Add structure]\t5) [Exit]\n");
         while (scanf_s("%d", &key) != 1 || key > 5 || key <= 0) {
             fprintf(stderr, "Invalid input!\n");
             rewind(stdin);
         }
         switch (key) {
             case 1: {
-                printCharacter(characters, n);
+                printCharacter(characters, size);
                 break;
             }
             case 2: {
-                sortCharacters(characters, n);
-                printCharacter(characters, n);
+                sortCharacters(characters, size);
+                printCharacter(characters, size);
                 break;
             }
             case 3: {
-                Remove(characters, &n);
-                printCharacter(characters, n);
+                Remove(characters, &size);
+                printCharacter(characters, size);
                 break;
             }
             case 4: {
+                addStructure(&characters, &size);
+                break;
+            }
+            case 5: {
+                free(characters);
                 rewind(stdin);
                 exit(EXIT_SUCCESS);
             }

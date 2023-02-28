@@ -29,6 +29,6 @@ char *getSortField();
 int chooseSort();
 void sortCharacters(character *characters, int size);
 void Remove(character *characters, int *len);
-void menu(character *characters, int size);
+int menu(character *characters, int size);
 
 

@@ -142,7 +142,7 @@ char *getSortField() {
 }
 
 int chooseSort() {
-    char *sortField = getSortField();
+    const char *sortField = getSortField();
     if (strcmp(sortField, "hp\n") == 0)
         return 1;
     else if (strcmp(sortField, "atk\n") == 0)
@@ -234,7 +234,7 @@ void initSize(int *size) {
     *size = check();
 }
 
-void menu(character *characters, int size) {
+int menu(character *characters, int size) {
     int key;
     while (1) {
         printf("\nWhat do you want from my program?\n1) [Show structure]\t2) [Sort structure]\t3) [Delete structure]\t4) [Add structure]\t5) [Exit]\n");
@@ -267,7 +267,7 @@ void menu(character *characters, int size) {
                 exit(EXIT_SUCCESS);
             }
             default: {
-                exit(EXIT_FAILURE);
+                return 0;
             }
         }
     }

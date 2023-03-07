@@ -1,71 +1,57 @@
 #include <stdio.h>
-#include <stdlib.h>
+//#include <stdlib.h>
 #include <stdbool.h>
 
-#define N 20 // число студентов
+#define MAXV 100 // maximum number of vertices in the graph
 
-int A[N][N] = { /* Матрица знакомств */ };
+typedef struct {
+    int v[MAXV+1][MAXV+1]; // adjacency matrix
+    int nvertices; // number of vertices in the graph
+} Graph;
 
-int team1[N], team2[N]; // массивы для хранения номеров студентов в командах
-int size1, size2; // текущие размеры команд
-
-bool visited[N]; // массив для хранения информации о посещении студентов
-
-/* Рекурсивная функция для обхода в глубину */
-void dfs(int u, int team[], int *size, int max_size) {
-    visited[u] = true;
-    team[(*size)++] = u;
-
-    /* Обходим всех соседей студента u */
-    for (int v = 0; v < N; v++) {
-        if (A[u][v] && !visited[v] && *size <= max_size) {
-            dfs(v, team, size, max_size);
-        }
-    }
-}
-
-/* Функция для поиска максимально связной группы студентов */
-int find_max_connected(int team[], int *size, int max_size) {
-    int max_connected = 0;
-    int max_connected_size = 0;
-
-    for (int i = 0; i < N; i++) {
-        if (!visited[i] && *size <= max_size) {
-            *size = 0;
-            dfs(i, team, size, max_size);
-            if (*size > max_connected_size) {
-                max_connected_size = *size;
-                max_connected = i;
+bool is_independent_set(Graph g, const int *set, int size) {
+    for (int i = 0; i < size; i++) {
+        for (int j = i+1; j < size; j++) {
+            if (g.v[set[i]][set[j]] == 1) {
+                return false;
             }
         }
     }
-
-    return max_connected;
+    return true;
 }
 
-/* Главная функция */
+int max(int a, int b) {
+    return (a > b) ? a : b;
+}
+
+int max_independent_set(Graph g, int *set, int size, int index, int max_size) {
+    if (index >= g.nvertices) {
+        if (is_independent_set(g, set, size)) {
+            return max(size, max_size);
+        } else {
+            return max_size;
+        }
+    }
+    int new_set[size+1];
+    for (int i = 0; i < size; i++) {
+        new_set[i] = set[i];
+    }
+    new_set[size] = index;
+    return max(max_independent_set(g, set, size, index+1, max_size),
+               max_independent_set(g, new_set, size+1, index+1, max_size));
+}
+
 int main() {
-    size1 = size2 = 0;
-
-    /* Пока есть непосещенные студенты */
-    while (size1 + size2 < N) {
-        int max_connected = find_max_connected(
-                size1 <= size2 ? team1 : team2, // выбираем команду, в которую добавляем студентов
-                size1 <= size2 ? &size1 : &size2,
-                size1 <= size2 ? size2/2 + 1 : size1/2 + 1 // максимальный размер команды
-        );
-
-        /* Добавляем максимально связную группу студентов в выбранную команду */
-        for (int i = 0; i < size1 + size2; i++) {
-            if (team1[i] == max_connected) {
-                printf("%d ", max_connected);
-                break;
-            } else if (team2[i] == max_connected) {
-                printf("%d ", max_connected);
-                break;
-            }
-        }
+    Graph g = {{{0}}};
+    int n, m; // number of vertices and edges
+    scanf_s("%d %d", &n, &m);
+    g.nvertices = n;
+    for (int i = 0; i < m; i++) {
+        int u, v;
+        scanf_s("%d %d", &u, &v);
+        g.v[u][v] = g.v[v][u] = 1;
     }
-
+    int set[MAXV];
+    printf("Maximum independent set size: %d\n", max_independent_set(g, set, 0, 0, 0));
     return 0;
 }

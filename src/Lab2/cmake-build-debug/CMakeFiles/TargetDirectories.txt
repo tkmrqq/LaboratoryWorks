@@ -1,0 +1,4 @@
+C:/GitHub/Laboratory-works/src/Lab2/cmake-build-debug/CMakeFiles/Lab2.dir
+C:/GitHub/Laboratory-works/src/Lab2/cmake-build-debug/CMakeFiles/HashTST.dir
+C:/GitHub/Laboratory-works/src/Lab2/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/GitHub/Laboratory-works/src/Lab2/cmake-build-debug/CMakeFiles/rebuild_cache.dir

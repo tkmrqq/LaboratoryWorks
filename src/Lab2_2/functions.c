@@ -94,7 +94,7 @@ void removeWord(wordCnt **wordCount, int index, int *count) {
 wordCnt *getDictionary(wordCnt *wordCount, int count, int *dictCount) {
     int maxProfit = 1;
     int sum = -2;
-    wordCnt *DictCount = (wordCnt *) malloc(100000 * sizeof(wordCnt));
+    wordCnt *DictCount = (wordCnt *) malloc(*dictCount * sizeof(wordCnt));
     while (maxProfit > 0) {
         maxProfit = INT_MIN;
         int deleteIndex;

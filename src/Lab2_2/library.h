@@ -6,7 +6,7 @@
 #define MaxWordLength 100
 
 typedef struct WordCount_t {
-    char *word;
+    char word[MaxWordLength];
     int count;
     int size;
 } wordCnt;

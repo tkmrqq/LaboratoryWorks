@@ -5,7 +5,7 @@
 #define MaxWordLength 100
 
 typedef struct Words {
-    char *word;
+    char word[MaxWordLength];
 } words;
 
 int isLetter(char ch) {
@@ -96,9 +96,10 @@ void printFileSize(FILE *inFile, FILE *outFile) {
     long inSize = ftell(inFile);
     fseek(outFile, 0, SEEK_END);
     long outSize = ftell(outFile);
-    printf("Original file size is %ld bytes\n", inSize);
-    printf("Compressed file size is %ld bytes\n", outSize);
-    printf("Difference is %ld\n", (inSize - outSize));
+    printf("Compressed file size is %ld bytes\n", inSize);
+    printf("Decompressed file size is %ld bytes\n", outSize);
+    printf("Difference is %ld bytes\n", (outSize - inSize));
+    printf("Difference is %ld KB\n", (outSize - inSize) / 1024);
 }
 
 int main() {

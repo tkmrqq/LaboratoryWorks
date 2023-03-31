@@ -43,7 +43,7 @@ void printStruct(wordCnt *wordCount, int count) {
 }
 
 wordCnt *countWordOccur(FILE *file, int *count) {
-    char *word;
+    char word[MaxWordLength];
     *count = 0;
     int maxWordCount = countWords(file);
     //    printf("Total words in file: %d\n", maxWordCount);
@@ -161,5 +161,5 @@ void printFileSize(FILE *inFile, FILE *outFile) {
     printf("Original file size is %ld bytes\n", inSize);
     printf("Compressed file size is %ld bytes\n", outSize);
     printf("Difference is %ld bytes\n", (inSize - outSize));
-    printf("Difference is %ld Kb\n", (inSize - outSize) / 1024);
+    printf("Difference is %ld KB\n", (inSize - outSize) / 1024);
 }

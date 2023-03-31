@@ -1,0 +1,3 @@
+C:/GitHub/Laboratory-works/works/tst/cmake-build-debug/CMakeFiles/tst2.dir
+C:/GitHub/Laboratory-works/works/tst/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/GitHub/Laboratory-works/works/tst/cmake-build-debug/CMakeFiles/rebuild_cache.dir

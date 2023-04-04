@@ -4,12 +4,12 @@ int countWords(FILE *file) {
     char line[1000];
     const char *word;
     int count = 0;
-    char *saveptr;
+    char *context;
     while (fgets(line, sizeof(line), file) != NULL) {
-        word = strtok_r(line, " \t\n", &saveptr);
+        word = strtok_s(line, " \t\n", &context);
         while (word != NULL) {
             count++;
-            word = strtok_r(NULL, " \t\n", &saveptr);
+            word = strtok_s(NULL, " \t\n", &context);
         }
     }
     return count;

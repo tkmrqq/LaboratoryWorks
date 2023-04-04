@@ -24,3 +24,5 @@
 128	234	7023265789640040	Compressor.exe	3647b20effcf0052
 2	122	7023265909210758	CMakeFiles/Decompress.dir/decompress.c.obj	d4f3d08ef2318d92
 122	228	7023265910248915	Decompress.exe	c5b4b26341260b03
+2	133	7023270810991360	CMakeFiles/Compressor.dir/functions.c.obj	de8919d2c7a0cbf4
+134	242	7023270812048240	Compressor.exe	3647b20effcf0052

@@ -3,7 +3,8 @@
 int main() {
     const char *compFileName = {"../compressed.txt"};
     const char *inFileName = {"../file.txt"};
-    int count = 0, dictCount = 0;
+    int count = 0;
+    int dictCount = 0;
     FILE *inFile;
     fopen_s(&inFile,inFileName, "r");
     if (inFile == NULL) {

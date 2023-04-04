@@ -80,7 +80,7 @@ wordCnt *countWordOccur(FILE *file, int *count) {
 int profit(wordCnt first, wordCnt last) {
     size_t firstLen = strnlen_s(first.word, sizeof(first.word));
     size_t lastLen = strnlen_s(last.word, sizeof(last.word));
-    int prof = firstLen * first.count + lastLen * last.count - (firstLen * last.count + lastLen * first.count + 2 + lastLen + firstLen);
+    int prof = (int)(firstLen * first.count + lastLen * last.count - (firstLen * last.count + lastLen * first.count + 2 + lastLen + firstLen));
     return prof;
 }
 

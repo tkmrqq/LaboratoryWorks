@@ -2,13 +2,14 @@
 
 int countWords(FILE *file) {
     char line[1000];
-    char *word;
+    const char *word;
     int count = 0;
+    char *saveptr;
     while (fgets(line, sizeof(line), file) != NULL) {
-        word = strtok(line, " \t\n");
+        word = strtok_r(line, " \t\n", &saveptr);
         while (word != NULL) {
             count++;
-            word = strtok(NULL, " \t\n");
+            word = strtok_r(NULL, " \t\n", &saveptr);
         }
     }
     return count;
@@ -115,6 +116,7 @@ wordCnt *getDictionary(wordCnt *wordCount, int count, int *dictCount) {
             removeWord(&wordCount, 0, &count);
         }
     }
+    free(wordCount);
     return DictCount;
 }
 

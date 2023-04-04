@@ -21,8 +21,6 @@ int main() {
 
     swap(inFile, outFile, dictCount, DictCount);
     printFileSize(inFile, outFile);
-
-    free(wordCount);
     free(DictCount);
     fclose(inFile);
     fclose(outFile);

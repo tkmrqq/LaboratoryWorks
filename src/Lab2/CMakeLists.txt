@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.24)
-project(Lab2 C)
+project(Lab2_2 C)
 
-set(CMAKE_C_STANDARD 23)
+set(CMAKE_C_STANDARD 11)
 
-add_executable(Lab2 main.c)
-add_executable(HashTST Hash.c)
+add_executable(Compressor main.c functions.c library.h)
+add_executable(Decompress decompress.c)

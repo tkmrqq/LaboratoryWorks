@@ -5,10 +5,13 @@ int main() {
     int count = 0, dictCount = 0;
     FILE *inFile = fopen("../file.txt", "r");
     if (inFile == NULL) {
+        fclose(inFile);
         return -1;
     }
     FILE *outFile = fopen(compFileName, "w");
     if (outFile == NULL) {
+        fclose(inFile);
+        fclose(outFile);
         return -1;
     }
 

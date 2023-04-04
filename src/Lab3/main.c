@@ -57,6 +57,8 @@ void convertToBW(int height, int width, unsigned char *pixels) {
 
 void gammaCorrection(int height, int width, unsigned char *pixels) {
     double gamma = 1.2;
+    printf("Input a value of gamma:");
+    scanf_s("%lf", &gamma);
     for (int y = 0; y < height; y++) {
         for (int x = 0; x < width; x++) {
             int index = (y * width + x) * 3;

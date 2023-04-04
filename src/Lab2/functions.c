@@ -33,7 +33,7 @@ size_t compare(const wordCnt *a, const wordCnt *b) {
 
 void getMemory(wordCnt *wordCount, int count) {
     for (int i = 0; i < count; i++) {
-        wordCount[i].size = wordCount[i].count * (int) strlen(wordCount[i].word);
+        wordCount[i].size = wordCount[i].count * (int)strnlen_s(wordCount[i].word, sizeof(wordCount[i].word));
     }
 }
 
@@ -50,10 +50,10 @@ wordCnt *countWordOccur(FILE *file, int *count) {
     //    printf("Total words in file: %d\n", maxWordCount);
     fseek(file, 0, SEEK_SET);
     wordCnt *wordCount = (wordCnt *) malloc(maxWordCount * sizeof(wordCnt));
-    while (fscanf(file, "%s", word) == 1) {
+    while (fscanf_s(file, "%100s", word) == 1) {
         int found = 0;
         int j = 0;
-        size_t len = strlen(word);
+        size_t len = strnlen_s(word, sizeof(word));
         for (int i = 0; i < len; i++) {
             if (isLetter(word[i])) {
                 word[j++] = word[i];
@@ -68,7 +68,7 @@ wordCnt *countWordOccur(FILE *file, int *count) {
             }
         }
         if (!found) {
-            strcpy(wordCount[*count].word, word);
+            strcpy_s(wordCount[*count].word, sizeof(wordCount[*count].word), word);
             wordCount[*count].count = 1;
             (*count)++;
         }
@@ -78,8 +78,8 @@ wordCnt *countWordOccur(FILE *file, int *count) {
 }
 
 int profit(wordCnt first, wordCnt last) {
-    size_t firstLen = strlen(first.word);
-    size_t lastLen = strlen(last.word);
+    size_t firstLen = strnlen_s(first.word, sizeof(first.word));
+    size_t lastLen = strnlen_s(last.word, sizeof(last.word));
     int prof = firstLen * first.count + lastLen * last.count - (firstLen * last.count + lastLen * first.count + 2 + lastLen + firstLen);
     return prof;
 }
@@ -94,7 +94,6 @@ void removeWord(wordCnt **wordCount, int index, int *count) {
 
 wordCnt *getDictionary(wordCnt *wordCount, int count, int *dictCount) {
     int maxProfit = 1;
-    int sum = -2;
     wordCnt *DictCount = (wordCnt *) malloc(*dictCount * sizeof(wordCnt));
     while (maxProfit > 0) {
         maxProfit = INT_MIN;
@@ -107,11 +106,10 @@ wordCnt *getDictionary(wordCnt *wordCount, int count, int *dictCount) {
             }
         }
         if (maxProfit > 0) {
-            //sum += maxProfit;
             *dictCount += 2;
             DictCount = realloc(DictCount, *dictCount * sizeof(wordCnt));
-            strcpy(DictCount[*dictCount - 2].word, wordCount[0].word);
-            strcpy(DictCount[*dictCount - 1].word, wordCount[deleteIndex].word);
+            strcpy_s(DictCount[*dictCount - 2].word, sizeof(DictCount[*dictCount - 2].word), wordCount[0].word);
+            strcpy_s(DictCount[*dictCount - 1].word, sizeof(DictCount[*dictCount - 1].word), wordCount[deleteIndex].word);
             removeWord(&wordCount, deleteIndex, &count);
             removeWord(&wordCount, 0, &count);
         }
@@ -129,7 +127,7 @@ void swap(FILE *inFile, FILE *outFile, int dictCount, wordCnt *DictCount) {
     fseek(inFile, 0, SEEK_SET);
     int fl;
     while (!feof(inFile)) {
-        if (fscanf(inFile, "%[^ ,.\n\t\"?!';:`’]", word) == 1) {
+        if (fscanf_s(inFile, "%[^ ,.\n\t\"?!';:`’]", word) == 1) {
             fl = 0;
             for (int i = 0; i < dictCount; i++) {
                 if (strcmp(DictCount[i].word, word) == 0) {

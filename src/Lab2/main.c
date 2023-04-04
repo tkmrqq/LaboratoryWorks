@@ -1,17 +1,18 @@
 #include "library.h"
 
 int main() {
-    char *compFileName = {"../compressed.txt"};
+    const char *compFileName = {"../compressed.txt"};
+    const char *inFileName = {"../file.txt"};
     int count = 0, dictCount = 0;
-    FILE *inFile = fopen("../file.txt", "r");
+    FILE *inFile;
+    fopen_s(&inFile,inFileName, "r");
     if (inFile == NULL) {
-        fclose(inFile);
         return -1;
     }
-    FILE *outFile = fopen(compFileName, "w");
+    FILE *outFile;
+    fopen_s(&outFile, compFileName, "w");
     if (outFile == NULL) {
         fclose(inFile);
-        fclose(outFile);
         return -1;
     }
 

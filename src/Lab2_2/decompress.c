@@ -105,11 +105,18 @@ void printFileSize(FILE *inFile, FILE *outFile) {
 int main() {
     int count = 0;
     FILE *compressed = fopen("../compressed.txt", "r");
+    if (compressed == NULL) {
+        return -1;
+    }
     FILE *decompressed = fopen("../decompressed.txt", "w");
+    if (decompressed == NULL) {
+        return -1;
+    }
     words *wordList = countWordOccur(compressed, &count);
     //    printStruct(wordList, count);
     swap(compressed, decompressed, count, wordList);
     printFileSize(compressed, decompressed);
+    free(wordList);
     fclose(compressed);
     fclose(decompressed);
 }

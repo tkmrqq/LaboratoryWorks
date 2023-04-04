@@ -22,13 +22,58 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7d49d625-b11c-4c47-a859-d5fa52d6ec13" name="Changes" comment="more fixes">
+      <change afterPath="$PROJECT_DIR$/../Lab3/.clang-format" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab3/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab3/.idea/Lab3.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab3/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab3/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab3/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab3/CMakeLists.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab3/PhotoshopULTRAMINMAX.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab3/cmake-build-debug/.cmake/api/v1/query/cache-v2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab3/cmake-build-debug/.cmake/api/v1/query/cmakeFiles-v1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab3/cmake-build-debug/.cmake/api/v1/query/codemodel-v2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab3/cmake-build-debug/.cmake/api/v1/query/toolchains-v1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab3/cmake-build-debug/.cmake/api/v1/reply/cache-v2-588532b09e0ee451a2c8.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab3/cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-b83fd9bdf2fce49465c8.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab3/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-64521bd5e26656916627.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab3/cmake-build-debug/.cmake/api/v1/reply/directory-.-Debug-d0094a50bb2071803777.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab3/cmake-build-debug/.cmake/api/v1/reply/index-2023-04-04T07-09-28-0594.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab3/cmake-build-debug/.cmake/api/v1/reply/target-Lab3-Debug-a09a40abb334eb1a3733.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab3/cmake-build-debug/.cmake/api/v1/reply/toolchains-v1-388b56f14df5d90b49df.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab3/cmake-build-debug/.ninja_deps" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab3/cmake-build-debug/.ninja_log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab3/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab3/cmake-build-debug/CMakeFiles/3.24.2/CMakeCCompiler.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab3/cmake-build-debug/CMakeFiles/3.24.2/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab3/cmake-build-debug/CMakeFiles/3.24.2/CMakeRCCompiler.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab3/cmake-build-debug/CMakeFiles/3.24.2/CMakeSystem.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab3/cmake-build-debug/CMakeFiles/3.24.2/CompilerIdC/CMakeCCompilerId.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab3/cmake-build-debug/CMakeFiles/3.24.2/CompilerIdC/a.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab3/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab3/cmake-build-debug/CMakeFiles/Lab3.dir/main.c.obj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab3/cmake-build-debug/CMakeFiles/Lab3.dir/photoshopULTRA_MAX.c.obj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab3/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab3/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab3/cmake-build-debug/CMakeFiles/clion-environment.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab3/cmake-build-debug/CMakeFiles/cmake.check_cache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab3/cmake-build-debug/CMakeFiles/rules.ninja" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab3/cmake-build-debug/Lab3.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab3/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab3/cmake-build-debug/build.ninja" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab3/cmake-build-debug/cmake_install.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab3/main.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab3/output.bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab3/photoshopULTRA_MAX.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Lab3/sample.bmp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Compressor.dir/functions.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Compressor.dir/functions.c.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Compressor.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Compressor.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions.c" beforeDir="false" afterPath="$PROJECT_DIR$/functions.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/decompress.c" beforeDir="false" afterPath="$PROJECT_DIR$/decompress.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,6 +154,11 @@
       <workItem from="1680251474910" duration="1079000" />
       <workItem from="1680253355009" duration="3905000" />
       <workItem from="1680257344063" duration="18000" />
+      <workItem from="1680329830208" duration="114000" />
+      <workItem from="1680438622893" duration="92000" />
+      <workItem from="1680497771756" duration="1535000" />
+      <workItem from="1680510158122" duration="4083000" />
+      <workItem from="1680590216352" duration="2874000" />
     </task>
     <task id="LOCAL-00001" summary="more fixes">
       <created>1680253743613</created>

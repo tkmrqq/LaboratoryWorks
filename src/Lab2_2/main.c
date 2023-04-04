@@ -18,6 +18,8 @@ int main() {
     wordCnt *DictCount = getDictionary(wordCount, count, &dictCount);
     swap(inFile, outFile, dictCount, DictCount);
     printFileSize(inFile, outFile);
+    free(wordCount);
+    free(DictCount);
     fclose(inFile);
     fclose(outFile);
     return 0;

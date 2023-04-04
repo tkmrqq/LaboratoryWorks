@@ -136,12 +136,11 @@ void swap(FILE *inFile, FILE *outFile, int dictCount, wordCnt *DictCount) {
                     if (i % 2 == 1) {
                         fprintf(outFile, "%s", DictCount[i - 1].word);
                         fl = 1;
-                        break;
                     } else {
                         fprintf(outFile, "%s", DictCount[i + 1].word);
                         fl = 1;
-                        break;
                     }
+                    break;
                 }
             }
             if (fl == 1) continue;

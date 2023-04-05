@@ -91,6 +91,8 @@ void removeWord(wordCnt **wordCount, int index, int *count) {
     for (int i = index; i < *count - 1; i++) {
         (*wordCount)[i] = (*wordCount)[i + 1];
     }
+    if(*count == 0)
+        exit(EXIT_FAILURE);
     *wordCount = realloc(*wordCount, (*count - 1) * sizeof(wordCnt));
     (*count)--;
 }

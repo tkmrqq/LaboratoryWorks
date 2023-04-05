@@ -7,10 +7,10 @@
 
 typedef struct {
     unsigned char type1, type2;
-    unsigned long size;
+    unsigned int size;
     unsigned short reversed1, reversed2;
-    unsigned long offset;
-} Header;
+    unsigned int offset;
+} BMPHeader;
 
 typedef struct {
     unsigned int Size;
@@ -20,9 +20,15 @@ typedef struct {
     unsigned int Compression;
     unsigned int ImageSize;
     int XPixelPerMeter, YPixelPerMeter;
-    unsigned int ColorUsed;
-} InfoHeader;
+    unsigned int TotalColors;
+    unsigned int ImportantColor;
+} BMPInfoHeader;
 
+typedef struct {
+    unsigned char b;
+    unsigned char g;
+    unsigned char r;
+} BGRPixel;
 
 
 int check(int x) {
@@ -126,16 +132,16 @@ int main() {
         printf("Unable to open file.\n");
         return -1;
     }
-    Header fileHeader;
-    InfoHeader infoHeader;
+    BMPHeader fileHeader;
+    BMPInfoHeader infoHeader;
     fread(&fileHeader, sizeof(fileHeader), 1, file);
     fread(&infoHeader, sizeof(infoHeader), 1, file);
 
     int width = infoHeader.Width;
     int height = infoHeader.Height;
     int padding = (4 - (width * 3) % 4) % 4;
-    printf("%d", width);
-    unsigned char *pixels = (unsigned char *) malloc((int)(width * height * 10));
+//    printf("%d", width);
+    unsigned char *pixels = (unsigned char *) malloc((int)(width * height * 3));
 
     for (int y = 0; y < height; y++) {
         for (int x = 0; x < width; x++) {
@@ -159,10 +165,8 @@ int main() {
 
     for (int y = 0; y < height; y++) {
         for (int x = 0; x < width; x++) {
-            int index = (y * width + x) * 3;
-            fwrite(&pixels[index + 2], 1, 1, outputFile);
-            fwrite(&pixels[index + 1], 1, 1, outputFile);
-            fwrite(&pixels[index], 1, 1, outputFile);
+            int index = y * width + x;
+            fwrite(&pixels[index], sizeof(BGRPixel), 1, outputFile);
         }
         for (int i = 0; i < padding; i++) {
             fputc(0, outputFile);

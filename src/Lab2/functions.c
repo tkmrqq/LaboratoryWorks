@@ -47,9 +47,12 @@ wordCnt *countWordOccur(FILE *file, int *count) {
     char word[MaxWordLength];
     *count = 0;
     int maxWordCount = countWords(file);
+    if (maxWordCount == 0)
+        exit(EXIT_FAILURE);
     //    printf("Total words in file: %d\n", maxWordCount);
     fseek(file, 0, SEEK_SET);
     wordCnt *wordCount = (wordCnt *) malloc(maxWordCount * sizeof(wordCnt));
+
     while (fscanf_s(file, "%100s", word) == 1) {
         int found = 0;
         int j = 0;

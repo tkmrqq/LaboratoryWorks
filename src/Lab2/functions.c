@@ -1,7 +1,7 @@
 #include "library.h"
 
 int countWords(FILE *file) {
-    char line[1000];
+    char line[MaxWordLength];
     const char *word;
     int count = 0;
     char *context;
@@ -97,7 +97,7 @@ void removeWord(wordCnt **wordCount, int index, int *count) {
 
 wordCnt *getDictionary(wordCnt *wordCount, int count, int *dictCount) {
     int maxProfit = 1;
-    wordCnt *DictCount = (wordCnt *) malloc(*dictCount * sizeof(wordCnt));
+    wordCnt *dictionary = (wordCnt *) malloc(*dictCount * sizeof(wordCnt));
     while (maxProfit > 0) {
         maxProfit = INT_MIN;
         int deleteIndex;
@@ -110,20 +110,20 @@ wordCnt *getDictionary(wordCnt *wordCount, int count, int *dictCount) {
         }
         if (maxProfit > 0) {
             *dictCount += 2;
-            DictCount = realloc(DictCount, *dictCount * sizeof(wordCnt));
-            strcpy_s(DictCount[*dictCount - 2].word, sizeof(DictCount[*dictCount - 2].word), wordCount[0].word);
-            strcpy_s(DictCount[*dictCount - 1].word, sizeof(DictCount[*dictCount - 1].word), wordCount[deleteIndex].word);
+            dictionary = realloc(dictionary, *dictCount * sizeof(wordCnt));
+            strcpy_s(dictionary[*dictCount - 2].word, sizeof(dictionary[*dictCount - 2].word), wordCount[0].word);
+            strcpy_s(dictionary[*dictCount - 1].word, sizeof(dictionary[*dictCount - 1].word), wordCount[deleteIndex].word);
             removeWord(&wordCount, deleteIndex, &count);
             removeWord(&wordCount, 0, &count);
         }
     }
     free(wordCount);
-    return DictCount;
+    return dictionary;
 }
 
-void swap(FILE *inFile, FILE *outFile, int dictCount, wordCnt *DictCount) {
+void swap(FILE *inFile, FILE *outFile, int dictCount, wordCnt *dictionary) {
     for (int i = 0; i < dictCount; i++) {
-        fprintf(outFile, "%s ", DictCount[i].word);
+        fprintf(outFile, "%s ", dictionary[i].word);
     }
     fprintf(outFile, "\n");
     char word[MaxWordLength];
@@ -133,12 +133,12 @@ void swap(FILE *inFile, FILE *outFile, int dictCount, wordCnt *DictCount) {
         if (fscanf_s(inFile, "%[^ ,.\n\t\"?!';:`’]", word) == 1) {
             fl = 0;
             for (int i = 0; i < dictCount; i++) {
-                if (strcmp(DictCount[i].word, word) == 0) {
+                if (strcmp(dictionary[i].word, word) == 0) {
                     if (i % 2 == 1) {
-                        fprintf(outFile, "%s", DictCount[i - 1].word);
+                        fprintf(outFile, "%s", dictionary[i - 1].word);
                         fl = 1;
                     } else {
-                        fprintf(outFile, "%s", DictCount[i + 1].word);
+                        fprintf(outFile, "%s", dictionary[i + 1].word);
                         fl = 1;
                     }
                     break;

@@ -17,16 +17,16 @@ int main() {
         return -1;
     }
 
-    wordCnt *wordCount = countWordOccur(inFile, &count);
-    qsort(wordCount, count, sizeof(wordCnt), (int (*)(const void *, const void *)) compare);
+    wordCnt *words = countWordOccur(inFile, &count);
+    qsort(words, count, sizeof(wordCnt), (int (*)(const void *, const void *)) compare);
 
-    while (wordCount[count - 1].size == 0)
-        removeWord(&wordCount, count - 1, &count);
-    wordCnt *DictCount = getDictionary(wordCount, count, &dictCount);
+    while (words[count - 1].size == 0)
+        removeWord(&words, count - 1, &count);
+    wordCnt *dictionary = getDictionary(words, count, &dictCount);
 
-    swap(inFile, outFile, dictCount, DictCount);
+    swap(inFile, outFile, dictCount, dictionary);
     printFileSize(inFile, outFile);
-    free(DictCount);
+    free(dictionary);
     fclose(inFile);
     fclose(outFile);
     return 0;

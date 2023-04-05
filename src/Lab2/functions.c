@@ -33,7 +33,7 @@ size_t compare(const wordCnt *a, const wordCnt *b) {
 
 void getMemory(wordCnt *wordCount, int count) {
     for (int i = 0; i < count; i++) {
-        wordCount[i].size = wordCount[i].count * (int)strnlen_s(wordCount[i].word, sizeof(wordCount[i].word));
+        wordCount[i].size = wordCount[i].count * (int) strnlen_s(wordCount[i].word, sizeof(wordCount[i].word));
     }
 }
 
@@ -83,7 +83,7 @@ wordCnt *countWordOccur(FILE *file, int *count) {
 int profit(wordCnt first, wordCnt last) {
     size_t firstLen = strnlen_s(first.word, sizeof(first.word));
     size_t lastLen = strnlen_s(last.word, sizeof(last.word));
-    int prof = (int)(firstLen * first.count + lastLen * last.count - (firstLen * last.count + lastLen * first.count + 2 + lastLen + firstLen));
+    int prof = (int) (firstLen * first.count + lastLen * last.count - (firstLen * last.count + lastLen * first.count + 2 + lastLen + firstLen));
     return prof;
 }
 
@@ -91,7 +91,7 @@ void removeWord(wordCnt **wordCount, int index, int *count) {
     for (int i = index; i < *count - 1; i++) {
         (*wordCount)[i] = (*wordCount)[i + 1];
     }
-    if(*count == 0)
+    if (*count - 1 == 0)
         exit(EXIT_FAILURE);
     *wordCount = realloc(*wordCount, (*count - 1) * sizeof(wordCnt));
     (*count)--;

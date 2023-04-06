@@ -3,4 +3,4 @@ project(Lab3 C)
 
 set(CMAKE_C_STANDARD 23)
 
-add_executable(Lab3 main.c)
+add_executable(Lab3 main.c BMP_Process.c)

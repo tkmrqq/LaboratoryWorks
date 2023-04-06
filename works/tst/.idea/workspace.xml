@@ -21,44 +21,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1f956ff6-ff07-4977-ae47-4d86165cc2f4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../../src/Lab2/.clang-format" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../src/Lab2/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../src/Lab2/.idea/Lab2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../src/Lab2/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../src/Lab2/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../src/Lab2/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../src/Lab2/CMakeLists.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../src/Lab2/Hash.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../src/Lab2/cmake-build-debug/.cmake/api/v1/query/cache-v2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../src/Lab2/cmake-build-debug/.cmake/api/v1/query/cmakeFiles-v1" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../src/Lab2/cmake-build-debug/.cmake/api/v1/query/codemodel-v2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../src/Lab2/cmake-build-debug/.cmake/api/v1/query/toolchains-v1" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../src/Lab2/cmake-build-debug/.cmake/api/v1/reply/cache-v2-f335f73d46d6ffefdf10.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../src/Lab2/cmake-build-debug/.cmake/api/v1/reply/directory-.-Debug-d0094a50bb2071803777.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../src/Lab2/cmake-build-debug/.cmake/api/v1/reply/target-Lab2-Debug-fa929360fdf86e9015bc.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../src/Lab2/cmake-build-debug/.cmake/api/v1/reply/toolchains-v1-388b56f14df5d90b49df.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../src/Lab2/cmake-build-debug/CMakeCache.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../src/Lab2/cmake-build-debug/CMakeFiles/3.24.2/CMakeCCompiler.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../src/Lab2/cmake-build-debug/CMakeFiles/3.24.2/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../src/Lab2/cmake-build-debug/CMakeFiles/3.24.2/CMakeRCCompiler.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../src/Lab2/cmake-build-debug/CMakeFiles/3.24.2/CMakeSystem.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../src/Lab2/cmake-build-debug/CMakeFiles/3.24.2/CompilerIdC/CMakeCCompilerId.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../src/Lab2/cmake-build-debug/CMakeFiles/3.24.2/CompilerIdC/a.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../src/Lab2/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../src/Lab2/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../src/Lab2/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../src/Lab2/cmake-build-debug/CMakeFiles/clion-environment.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../src/Lab2/cmake-build-debug/CMakeFiles/cmake.check_cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../src/Lab2/cmake-build-debug/CMakeFiles/rules.ninja" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../src/Lab2/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../src/Lab2/cmake-build-debug/build.ninja" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../src/Lab2/cmake-build-debug/cmake_install.cmake" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../src/Lab2/file.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../src/Lab2/main.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../src/Lab2/out.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../src/Lab2_2/.idea/Lab2_2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/tst.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SEM-2/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../SEM-2/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/Lab3/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/Lab3/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,11 +65,6 @@
   }
 }</component>
   <component name="RunManager">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="tst2" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="tst" TARGET_NAME="tst2" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="tst" RUN_TARGET_NAME="tst2">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -127,6 +86,7 @@
       <workItem from="1678826905438" duration="95000" />
       <workItem from="1678947793298" duration="93000" />
       <workItem from="1680085741036" duration="982000" />
+      <workItem from="1680762006704" duration="42000" />
     </task>
     <servers />
   </component>

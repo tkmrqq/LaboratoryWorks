@@ -1,7 +1,9 @@
 #include "BitMapPicture.h"
 
+#define COLORS 255.0
+
 int check(int x) {
-    while (scanf_s("%d", &x) != 1 || x < 0) {
+    while (scanf_s("%d", &x) != 1 || x < 0 || x > 10) {
         rewind(stdin);
         fprintf(stderr, "ERROR!\n");
     }
@@ -40,12 +42,9 @@ void gammaCorrection(BMP *bmp, uint32_t height, uint32_t width) {
     double gammaINV = 1 / gamma;
     for (int y = 0; y < height; y++) {
         for (int x = 0; x < width; x++) {
-            double r = (double) (pow(bmp->pixels[y][x].red / 255.0, gammaINV) * 255.0);
-            double g = (double) (pow(bmp->pixels[y][x].green / 255.0, gammaINV) * 255.0);
-            double b = (double) (pow(bmp->pixels[y][x].blue / 255.0, gammaINV) * 255.0);
-            bmp->pixels[y][x].red = (unsigned char) r;
-            bmp->pixels[y][x].green = (unsigned char) g;
-            bmp->pixels[y][x].blue = (unsigned char) b;
+            bmp->pixels[y][x].red = (uint8_t)(pow(bmp->pixels[y][x].red / COLORS, gammaINV) * COLORS);
+            bmp->pixels[y][x].green = (uint8_t)(pow(bmp->pixels[y][x].green / COLORS, gammaINV) * COLORS);
+            bmp->pixels[y][x].blue = (uint8_t)(pow(bmp->pixels[y][x].blue / COLORS, gammaINV) * COLORS);
         }
     }
 }
@@ -88,6 +87,14 @@ BMP *readBMP(const char *fileName) {
     int height = bmp->header.height;
     int bpp = bmp->header.bpp;
     printf("%d\n", bpp);
+
+    if(bmp->header.bpp != 24){
+        printf("Error: File isn't 24 bits per pixel.");
+        free(bmp);
+        fclose(inputFile);
+        return NULL;
+    }
+
 
     if (bmp->header.compression) {
         printf("Error: Compression not supported.");

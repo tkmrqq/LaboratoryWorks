@@ -33,9 +33,10 @@ void menu(BMP *bmp) {
 
 int main() {
     const char *fileName = getFilePath();
+    const char *outFileName = getFilePath();
     BMP *bmp = readBMP(fileName);
     menu(bmp);
-    writeBMP("../output.bmp", bmp);
+    writeBMP(outFileName, bmp);
     free(bmp->pixels);
     free(bmp);
     return 0;

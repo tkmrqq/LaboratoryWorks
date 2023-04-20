@@ -1,5 +1,7 @@
 typedef struct Node Node;
 
+#define size 100
+
 struct Node {
     char* question;
     Node* yes;

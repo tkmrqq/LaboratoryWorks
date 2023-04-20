@@ -3,8 +3,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define size 100
-
 int check(int key) {
     while (!scanf_s("%d", &key) || key < 0 || key > 5) {
         fprintf(stderr, "Invalid input!\n");
@@ -23,10 +21,11 @@ int menu(int key) {
         key = check(key);
         switch (key) {
             case 1:
-                if(tree != NULL)
+                if (tree != NULL)
                     play(tree, &answers, &answersSize);
                 else
                     exit(69);
+                break;
             case 2:
                 printf("Input DB:");
                 scanf_s("%99s", path);

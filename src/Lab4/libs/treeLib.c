@@ -32,9 +32,9 @@ void play(Node *node, Node ***answers, int *answersSize) {
     if (node->yes == NULL) {
         printf("Это %s?\n", node->question);
     } else {
-        printf("%s\n", node->question);
+        printf("%s?\n", node->question);
     }
-    char response[10];
+    char response[size/10];
     while (strcmp(response, "yes") != 0 && strcmp(response, "no") != 0) {
         scanf("%9s", response);
     }
@@ -52,10 +52,10 @@ void play(Node *node, Node ***answers, int *answersSize) {
             play(node->no, answers, answersSize);
         } else {
             printf("Не угадал\nЧто это было?\n");
-            char newObject[100];
-            char newQuestion[100];
+            char newObject[size];
+            char newQuestion[size];
             scanf_s("%s", newObject);
-            printf("Каким вопросом можно отличить %s от %s?:\n", newObject, node->question);
+            printf("Каким вопросом можно отличить %s от %s:\n", newObject, node->question);
             scanf_s(" %[^\n]s", newQuestion);
             Node *newQuestionNode = createNode(newQuestion);
             Node *newObjectNode = createNode(newObject);
@@ -106,7 +106,6 @@ int getEnd(const char *line) {
     }
     return end;
 }
-
 
 void parse(const char *yesStart, const char *toCheck, const char *line, Node **node) {
     if (yesStart != NULL && strcmp(toCheck, "yes") == 0) {
@@ -210,4 +209,27 @@ void clearMemory(Node *node) {
         clearMemory(node->no);
     }
     free(node);
+}
+
+void printTree(struct Node* root, int level, Node** answers, int answersLen) {
+    if (root == NULL) {
+        return;
+    }
+    for (int i = 0; i < level; i++) {
+        printf("  ");
+    }
+    int founded = 0;
+    for(int i = 0; i < answersLen; i++) {
+        if(answers[i] == root) {
+            founded = 1;
+            break;
+        }
+    }
+    if(founded)
+        printf("\033[32m= %s\033[0m\n", root->question);
+    else
+        printf("\033[31m- %s\033[0m\n", root->question);
+
+    printTree(root->yes, level+1, answers, answersLen);
+    printTree(root->no, level, answers, answersLen);
 }

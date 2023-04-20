@@ -1,3 +1,0 @@
-C:/GitHub/Laboratory-works/src/TestingDiff/cmake-build-debug/CMakeFiles/TestingDiff.dir
-C:/GitHub/Laboratory-works/src/TestingDiff/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/GitHub/Laboratory-works/src/TestingDiff/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -3,5 +3,4 @@ project(practice C)
 
 set(CMAKE_C_STANDARD 23)
 
-add_executable(practice main.c)
-add_executable(ttt ttt.c)
+add_executable(practice MaxIndependedSet.cpp)

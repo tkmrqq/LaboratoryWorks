@@ -12,9 +12,6 @@ CMake Warning (dev) in CMakeLists.txt:
   line.
 This warning is for project developers.  Use -Wno-dev to suppress it.
 
-CMake Error at CMakeLists.txt:3 (add_subdirectory):
-  add_subdirectory given source "libs" which is not an existing directory.
-
-
--- Configuring incomplete, errors occurred!
-See also "C:/GitHub/Laboratory-works/src/Lab4/cmake-build-debug/CMakeFiles/CMakeOutput.log".
+-- Configuring done
+-- Generating done
+-- Build files have been written to: C:/GitHub/Laboratory-works/src/Lab4/cmake-build-debug

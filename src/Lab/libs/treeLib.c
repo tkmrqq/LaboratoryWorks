@@ -2,16 +2,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
-Node *createNode(const char *question) {
-    Node *node = (Node *) malloc(sizeof(Node));
-    node->question = (char *) malloc(strlen(question) + 1);
-    strcpy(node->question, question);
-    node->yes = NULL;
-    node->no = NULL;
-    return node;
-}
-
+#include <yaml.h>
+/*
 void insert(Node *node, const char *question, const char *answer) {
     if (strcmp(answer, "yes") == 0) {
         if (node->yes == NULL) {
@@ -232,7 +224,107 @@ void printTree(struct Node* root, int level, Node** answers, int answersLen) {
 
     printTree(root->yes, level+1, answers, answersLen);
     printTree(root->no, level, answers, answersLen);
+}*/
+
+void add_node(Node **root, char *name, int depth) {
+    if (*root == NULL) {
+        *root = malloc(sizeof(Node));
+        (*root)->question = strdup(name);
+        (*root)->no = NULL;
+        (*root)->yes = NULL;
+        return;
+    }
+
+    if (depth % 2 == 0) {
+        add_node(&((*root)->no), name, depth + 1);
+    } else {
+        add_node(&((*root)->yes), name, depth + 1);
+    }
 }
 
+void parse_yaml(FILE *file, Node **root) {
+    yaml_parser_t parser;
+    yaml_event_t event;
+    char *name = NULL;
+    int depth = 0;
 
+    // Initialize parser
+    if (!yaml_parser_initialize(&parser)) {
+        printf("Failed to initialize parser!\n");
+        exit(EXIT_FAILURE);
+    }
 
+    // Set input file
+    yaml_parser_set_input_file(&parser, file);
+
+    // Start parsing
+    do {
+        // Get next event
+        if (!yaml_parser_parse(&parser, &event)) {
+            printf("Failed to get next event!\n");
+            exit(EXIT_FAILURE);
+        }
+
+        // Check event type
+        switch (event.type) {
+            case YAML_SCALAR_EVENT:
+                // Get name and add to tree
+                name = (char *) event.data.scalar.value;
+                add_node(root, name, depth);
+                break;
+            case YAML_SEQUENCE_START_EVENT:
+                // Increase depth
+                depth++;
+                break;
+            case YAML_SEQUENCE_END_EVENT:
+                // Decrease depth
+                depth--;
+                break;
+            default:
+                break;
+        }
+
+        // Free event
+        yaml_event_delete(&event);
+    } while (event.type != YAML_STREAM_END_EVENT);
+
+    // Cleanup parser
+    yaml_parser_delete(&parser);
+}
+
+void play(Node *node, Node ***answers, int *answersSize) {
+    if (node->yes == NULL) {
+        printf("Это %s?\n", node->question);
+    } else {
+        printf("%s?\n", node->question);
+    }
+    char response[size/10];
+    while (strcmp(response, "yes") != 0 && strcmp(response, "no") != 0) {
+        scanf("%9s", response);
+    }
+    if (strcmp(response, "yes") == 0) {
+        *answers = realloc(*answers, (*answersSize + 1) * sizeof(Node *));
+        (*answers)[*answersSize] = node;
+        (*answersSize)++;
+        if (node->yes != NULL) {
+            play(node->yes, answers, answersSize);
+        } else {
+            printf("Ура! Я угадал! /(^0^)/\n");
+        }
+    } else if (strcmp(response, "no") == 0) {
+        if (node->no != NULL) {
+            play(node->no, answers, answersSize);
+        } else {
+            printf("Не угадал\nЧто это было?\n");
+            char newObject[size];
+            char newQuestion[size];
+            scanf_s("%s", newObject);
+            printf("Каким вопросом можно отличить %s от %s:\n", newObject, node->question);
+            scanf_s(" %[^\n]s", newQuestion);
+            Node *newQuestionNode = create_node(0, newQuestion);
+            Node *newObjectNode = create_node(0, newObject);
+            newQuestionNode->yes = newObjectNode;
+            node->no = newQuestionNode;
+        }
+    }
+}

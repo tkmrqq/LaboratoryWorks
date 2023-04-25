@@ -1,0 +1,10 @@
+ 1         0             Animals
+ 2         1             Mammals
+ 3         1             Birds
+ 4         1             Fish
+ 5         2             Cats
+ 6         2             Dogs
+ 7         3             Eagles
+ 8         3             Penguins
+ 9         4             Trout
+10         4             Salmon

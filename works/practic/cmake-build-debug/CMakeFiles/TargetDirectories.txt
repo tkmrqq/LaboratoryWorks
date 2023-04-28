@@ -1,3 +1,0 @@
-C:/GitHub/Laboratory-works/works/practic/cmake-build-debug/CMakeFiles/practice.dir
-C:/GitHub/Laboratory-works/works/practic/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/GitHub/Laboratory-works/works/practic/cmake-build-debug/CMakeFiles/rebuild_cache.dir

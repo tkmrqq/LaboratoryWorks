@@ -1,8 +1,0 @@
-C:/GitHub/Laboratory-works/src/Lab4-WN/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/GitHub/Laboratory-works/src/Lab4-WN/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-C:/GitHub/Laboratory-works/src/Lab4-WN/cmake-build-debug/libs/CMakeFiles/library.dir
-C:/GitHub/Laboratory-works/src/Lab4-WN/cmake-build-debug/libs/CMakeFiles/edit_cache.dir
-C:/GitHub/Laboratory-works/src/Lab4-WN/cmake-build-debug/libs/CMakeFiles/rebuild_cache.dir
-C:/GitHub/Laboratory-works/src/Lab4-WN/cmake-build-debug/files/CMakeFiles/Lab4.dir
-C:/GitHub/Laboratory-works/src/Lab4-WN/cmake-build-debug/files/CMakeFiles/edit_cache.dir
-C:/GitHub/Laboratory-works/src/Lab4-WN/cmake-build-debug/files/CMakeFiles/rebuild_cache.dir

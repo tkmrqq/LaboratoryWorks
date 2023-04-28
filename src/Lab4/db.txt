@@ -1,1 +1,83 @@
-{"question":"Это место?","yes":{"question":"Место находится на северном полушарии?","yes":{"question":"Место находится в Европе?","yes":{"question":"Франция?"}},"no":{"question":"Германия","yes":{"question":"Берлин"},"no":{"question":"Швейцария","yes":{"question":"Цюрих"},"no":{"question":"Испания","yes":{"question":"Мадрид"},"no":{"question":"Италия","yes":{"question":"Рим"},"no":{"question":"Великобритания","yes":{"question":"Лондон"},"no":{"question":"Польша","yes":{"question":"Варшава"},"no":{"question":"Чехия","yes":{"question":"Прага"},"no":{"question":"Австрия","yes":{"question":"Вена"},"no":{"question":"Греция","yes":{"question":"Афины"}}}}}}}}}}},"no":{"question":"Место находится на южном полушарии?","yes":{"question":"Место находится в Южной Америке?","yes":{"question":"Аргентина?","no":{"question":"Бразилия","yes":{"question":"Бразилиа"},"no":{"question":"Перу","yes":{"question":"Лима"},"no":{"question":"Чили","yes":{"question":"Сантьяго"}}}}},"no":{"question":"Место находится в Азии?","yes":{"question":"Индия?","no":{"question":"Китай","yes":{"question":"Пекин"},"no":{"question":"Япония","yes":{"question":"Токио"},"no":{"question":"Россия","yes":{"question":"Москва"}}}}},"no":{"question":"Место находится в Африке?","yes":{"question":"Египет?","no":{"question":"ЮАР","yes":{"question":"Кейптаун"},"no":{"question":"Нигерия","yes":{"question":"Абуджа"}}}},"no":{"question":"Место находится в Австралии?","yes":{"question":"Сидней"},"no":{"question":"Место находится в Антарктиде?","yes":{"question":"Мак-Мердо станция"}}}}}}}}
+Does it device used for typing?
+This is Mouse?
+This is Monitor?
+This is MousePad?
+This is Headphones?
+Is that super bright?
+Is it used for print papers?
+RGB-Illumination
+@
+@
+Printer
+@
+@
+Super-puper RGB illumination that burn your eyes
+@
+@
+Is it bleutooth headphones?
+Audio-Technica
+@
+@
+Logitech G435
+@
+@
+Is it has various beautiful designs?
+HyperX
+@
+@
+Varmillo Panda
+@
+@
+This is VA monitor?
+This is TN+Film monitor?
+IPS Monitor
+@
+@
+BenQ Zowie
+@
+@
+Is the manufacturer popular?
+Va Monitor
+@
+@
+Samsung VA 144HZ
+@
+@
+This is a cable mouse?
+Wireless Mouse
+@
+@
+Is the logo blue?
+Does it old but cool?
+Is it legendary mouse?
+Razer
+@
+@
+Bloody X7
+@
+@
+SteelSeries Prime
+@
+@
+Logitech
+@
+@
+This is keyboard?
+Keypad
+@
+@
+This is a cheap mechanical keyboard?
+Is it expensive?
+Mechanical Keyboard
+@
+@
+Does it have various Japanese-like designs?
+Leopold FC750R
+@
+@
+Varmilo MA87
+@
+@
+Redragon Draconic
+@
+@

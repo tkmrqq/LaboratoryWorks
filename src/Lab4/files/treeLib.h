@@ -1,17 +1,26 @@
-typedef struct Node Node;
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
-#define size 100
+#define path "C:/GitHub/Laboratory-works/src/Lab4/db.txt"
 
-struct Node {
-    char* question;
-    Node* yes;
-    Node* no;
-};
+#define Size 1024
 
-Node* createNode(const char* question);
-Node* parseNode(const char* line);
-void insert(Node* node, const char* question, const char* answer);
-void play(Node* node, Node*** answers, int* answersSize);
-void save(Node* root, const char* filename);
-Node* load(const char* filename);
-void clearMemory(Node* node);
+typedef struct Node_t {
+
+    char *data;
+    struct Node_t *right;
+    struct Node_t *left;
+} Node;
+
+void functions(int *x);
+void getMenuIndex(int *x);
+void freeTree(Node * Tree);
+void makeNewDataBase(char *Quest, char *Word, Node *Tree, FILE *Data, char *GetAnswer);
+void getQuestion(char *Quest);
+void addNewElementInDataBase(char *Word, Node *tree, FILE *Data, char *getAnswer);
+int getAns();
+void checkAnswer(char *Word, Node *Tree, FILE *Data, char *getAnswer);
+void getWord(char *Word);
+void treePrint(Node *Tree, char **getAnswer);
+Node * createFromData(Node *Tree, FILE *Data);

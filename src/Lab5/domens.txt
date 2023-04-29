@@ -1,0 +1,13 @@
+example.com 192.168.1.1
+google.com 216.58.194.174
+lms.bsuir.by 192.168.251.23
+lms2.bsuir.by lms.bsuir.by
+prometey.bsuir.by 134.17.213.42
+vk.com 87.240.129.133
+youtube.com 142.250.185.174
+github.com 140.82.121.3
+habr.com 178.248.237.68
+yandex.ru 77.88.55.60
+dzen.ru yandex.ru
+alixepress.ru 47.246.133.88
+twitch.tv 151.101.130.167

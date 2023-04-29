@@ -67,10 +67,10 @@ void findDomain(const char *IP, const char *filename) {
     char line[MaxCacheSize / 4];
     while (fgets(line, sizeof(line), file) != NULL) {
         char *savePtr = NULL;
-        char *found_dns = strtok_r(line, " \n", &savePtr);
+        char *domain = strtok_r(line, " \n", &savePtr);
         char *ip = strtok_r(NULL, " \n", &savePtr);
         if (strcmp(ip, IP) == 0) {
-            printf("%s\n", found_dns);
+            printf("\033[0;33m%s\033[0m\n", domain);
         }
     }
     fclose(file);
@@ -83,7 +83,7 @@ void findDomains(char* ip_addr, cacheTable * cache) {
         cacheEntry = cache->table[i];
         while (cacheEntry != NULL) {
             if (strcmp(cacheEntry->IP, ip_addr) == 0) {
-                printf("%s\n", cacheEntry->domain);
+                printf("\033[0;33m%s\033[0m\n", cacheEntry->domain);
             }
             cacheEntry = cacheEntry->next;
         }

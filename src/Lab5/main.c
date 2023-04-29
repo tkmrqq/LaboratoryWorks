@@ -1,7 +1,7 @@
 #include "lib.h"
 
 int check(int key) {
-    while (scanf_s("%d", &key) != 1 || key < 1 || key > 4) {
+    while (scanf_s("%d", &key) != 1 || key < 1 || key > 5) {
         fprintf(stderr, "Invalid input!\n");
         rewind(stdin);
     }
@@ -56,6 +56,7 @@ void menu() {
                 }
                 else
                     findDomains(ip, cache);
+                break;
             }
             default:
                 freeCache(cache);

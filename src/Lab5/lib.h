@@ -17,7 +17,7 @@ typedef struct cache {
     cacheEntry **table;
 } cacheTable;
 
-#define MaxCacheSize 1024
+#define MaxCacheSize 5
 #define MaxDomainSize 100
 #define IPSize 15
 

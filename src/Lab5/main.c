@@ -29,7 +29,7 @@ void menu() {
     cacheTable *cache = createCache();
     while (1) {
         printf("================\n");
-        printf("1-Add\n2-Find\n3-Print cache\n4-Find domain by IP\n5-Exit\n");
+        printf("1)Add\n2)Find\n3)Print cache\n4)Find domain by IP\n5)Exit\n");
         key = check(key);
         switch (key) {
             case 1: {

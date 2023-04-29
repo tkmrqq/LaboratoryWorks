@@ -3,4 +3,4 @@ project(LaboratoryWorks C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(LaboratoryWorks src/Lab2/main.c src/Lab2/functions.c src/Lab2/library.h)
+add_executable(LaboratoryWorks src/Lab5/main.c src/Lab5/cacheProcess.c src/Lab5/lib.h)

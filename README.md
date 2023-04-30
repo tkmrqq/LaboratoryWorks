@@ -1,7 +1,7 @@
 #***Laboratory works (ОАИП)***
-<p align="left">
+<p align="right">
   <a href="https://sonarcloud.io/summary/new_code?id=tkmrqq_Laboratory-works">
-    <img src="https://sonarcloud.io/images/project_badges/sonarcloud-white.svg" alt="SonarCloud" width="100">
+    <img src="https://sonarcloud.io/images/project_badges/sonarcloud-white.svg" alt="SonarCloud" width="300">
   </a>
 </p>
 

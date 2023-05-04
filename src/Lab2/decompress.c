@@ -28,12 +28,6 @@ int countWords(FILE *file) {
     return count;
 }
 
-/*void printStruct(words *wordCount, int count) {
-    for (int i = 0; i < count; ++i) {
-        printf("%s\n", wordCount[i].word);
-    }
-}*/
-
 words *countWordOccur(FILE *file, int *count) {
     char word[MaxWordLength];
     *count = 0;
@@ -110,10 +104,10 @@ int main() {
     }
     FILE *decompressed = fopen("../decompressed.txt", "w");
     if (decompressed == NULL) {
+        fclose(decompressed);
         return -1;
     }
     words *wordList = countWordOccur(compressed, &count);
-    //    printStruct(wordList, count);
     swap(compressed, decompressed, count, wordList);
     printFileSize(compressed, decompressed);
     free(wordList);

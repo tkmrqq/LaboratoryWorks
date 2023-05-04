@@ -7,6 +7,7 @@ void functions(int *x) {
     FILE *Data = fopen(path, "r");
     char *Word = (char *) calloc(Size, sizeof(char));
     char *GetAnswer = (char *) calloc(Size, sizeof(char));
+    if (!GetAnswer) return;
     getWord(Word);
     Node = createFromData(Node, Data);
     treePrint(Node, &GetAnswer);
@@ -24,6 +25,7 @@ void getMenuIndex(int *x) {
         rewind(stdin);
     }
     char *y = (char *) calloc(Size, sizeof(char));
+    if (!y) return;
     itoa(*x, y, 10);
     strcat(y, "\n");
     if ((*x) == 3) {
@@ -32,7 +34,8 @@ void getMenuIndex(int *x) {
         scanf_s("%c", &key, 1);
         if (key == 'Y' || key == 'y')
             secretFunction();
-        else return;
+        else
+            return;
     }
 }
 
@@ -50,7 +53,7 @@ void getQuestion(char *Quest) {
 void makeNewDataBase(char *Quest, char *Word, Node *Tree, FILE *Data, char *GetAnswer) {
     if (Tree != NULL) {
         int Flag = 0;
-        if (strcmp(Tree->data, GetAnswer) == 0 || strcmp(Tree->data, GetAnswer) == 0) {
+        if (strcmp(Tree->data, GetAnswer) == 0) {
             fputs(Quest, Data);
             Flag = 1;
         }
@@ -70,6 +73,7 @@ void makeNewDataBase(char *Quest, char *Word, Node *Tree, FILE *Data, char *GetA
 void addNewElementInDataBase(char *Word, Node *tree, FILE *Data, char *getAnswer) {
     printf("What question can differ this two things?:\n");
     char *quest = (char *) calloc(Size, sizeof(char));
+    if (!quest) return;
     getQuestion(quest);
     Data = fopen(path, "w");
     makeNewDataBase(quest, Word, tree, Data, getAnswer);
@@ -87,14 +91,15 @@ void checkAnswer(char *Word, Node *Tree, FILE *Data, char *getAnswer) {
 
 int getAns() {
     printf("\033[0;32mInput your answer(Y/N)\033[0m");
-    char *Str = (char *) calloc(Size, sizeof(char));
-    fgets(Str, Size - 1, stdin);
+    char *str = (char *) calloc(Size, sizeof(char));
+    if (!str) return 69;
+    fgets(str, Size - 1, stdin);
     rewind(stdin);
-    while ((int) strlen(Str) != 2) {
+    while ((int) strlen(str) != 2) {
         fprintf(stderr, "Invalid input, try again!");
-        fgets(Str, Size - 1, stdin);
+        fgets(str, Size - 1, stdin);
     }
-    if (strstr(Str, "Y") != 0 || strstr(Str, "y") != 0) {
+    if (strstr(str, "Y") != 0 || strstr(str, "y") != 0) {
         return 1;
     } else
         return 0;

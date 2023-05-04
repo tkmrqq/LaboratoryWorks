@@ -29,7 +29,7 @@ void getMenuIndex(int *x) {
     if ((*x) == 3) {
         char key;
         printf("Are you sure(Y/N)");
-        scanf_s("%c", &key);
+        scanf_s("%c", &key, 1);
         if (key == 'Y' || key == 'y')
             secretFunction();
         else return;

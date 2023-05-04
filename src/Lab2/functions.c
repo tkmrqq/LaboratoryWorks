@@ -49,11 +49,11 @@ wordCnt *countWordOccur(FILE *file, int *count) {
     int maxWordCount = countWords(file);
     if (maxWordCount == 0)
         exit(EXIT_FAILURE);
-    //    printf("Total words in file: %d\n", maxWordCount);
+
     fseek(file, 0, SEEK_SET);
     wordCnt *wordCount = (wordCnt *) malloc(maxWordCount * sizeof(wordCnt));
 
-    while (fscanf_s(file, "%100s", word) == 1) {
+    while (fscanf_s(file, "%100s", word, (unsigned) _countof(word)) == 1) {
         int found = 0;
         int j = 0;
         size_t len = strnlen_s(word, sizeof(word));
@@ -132,7 +132,7 @@ void swap(FILE *inFile, FILE *outFile, int dictCount, wordCnt *dictionary) {
     fseek(inFile, 0, SEEK_SET);
     int fl;
     while (!feof(inFile)) {
-        if (fscanf_s(inFile, "%[^ ,.\n\t\"?!';:`’]", word) == 1) {
+        if (fscanf_s(inFile, "%[^ ,.\n\t\"?!';:`’]", word, (unsigned) _countof(word)) == 1) {
             fl = 0;
             for (int i = 0; i < dictCount; i++) {
                 if (strcmp(dictionary[i].word, word) == 0) {

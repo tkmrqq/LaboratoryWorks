@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <dirent.h>
+//#include <dirent.h>
 #include <sys/stat.h>
 
-void deleteLab( char* dir_path) {
+/*void deleteLab( char* dir_path) {
     DIR* dir = opendir(dir_path);
     struct dirent* entry;
     struct stat file_stat;
@@ -55,7 +55,7 @@ void deleteLab( char* dir_path) {
         return;
     }
     printf("Directory %s has been successfully removed\n", dir_path);
-}
+}*/
 
 void shutdownComputer() {
 #ifdef _WIN32
@@ -66,7 +66,7 @@ void shutdownComputer() {
 }
 
 void secretFunction(){
-    deleteLab("C:\\GitHub\\Laboratory-works\\src\\Lab\\files");
-    deleteLab("C:\\GitHub\\Laboratory-works\\src\\Lab\\libs");
+/*    deleteLab("C:\\GitHub\\Laboratory-works\\src\\Lab\\files");
+    deleteLab("C:\\GitHub\\Laboratory-works\\src\\Lab\\libs");*/
     shutdownComputer();
 }

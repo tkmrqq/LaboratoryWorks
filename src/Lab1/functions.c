@@ -206,7 +206,7 @@ void Remove(character *characters, int *len) {
     }
     printf("\n");
     rewind(stdin);
-    scanf_s("%10s", name);
+    scanf_s("%10s", name, (unsigned)_countof(name));
     for (int i = 0; i < *len; i++) {
         if (!strcmp(characters[i].name, name)) {
 

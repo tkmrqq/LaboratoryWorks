@@ -7,7 +7,11 @@ void functions(int *x) {
     FILE *Data = fopen(path, "r");
     char *Word = (char *) calloc(Size, sizeof(char));
     char *GetAnswer = (char *) calloc(Size, sizeof(char));
-    if (!GetAnswer) return;
+    if (!GetAnswer || !Word) {
+        fclose(Data);
+        *x = 3;
+        return;
+    }
     getWord(Word);
     Node = createFromData(Node, Data);
     treePrint(Node, &GetAnswer);
@@ -37,6 +41,7 @@ void getMenuIndex(int *x) {
         else
             return;
     }
+    free(y);
 }
 
 void getWord(char *Word) {

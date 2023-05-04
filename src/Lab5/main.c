@@ -51,11 +51,7 @@ void menu() {
                 char *ip = getIP();
                 if (isValidIP(ip) == 0)
                     return;
-                if(cache != NULL){
-                    findDomain(ip, "../domains.txt");
-                }
-                else
-                    findDomains(ip, cache);
+                findDomains(ip, "../domains.txt");
                 break;
             }
             default:

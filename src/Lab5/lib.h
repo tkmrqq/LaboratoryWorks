@@ -14,10 +14,11 @@ typedef struct cacheEntry {
 
 typedef struct cache {
     int size;
-    cacheEntry **table;
+    cacheEntry **table;//ps arr
 } cacheTable;
 
 #define MaxCacheSize 5
+#define MaxLineLength 256
 #define MaxDomainSize 100
 #define IPSize 15
 
@@ -25,15 +26,12 @@ cacheTable *createCache();
 int isValidIP(const char *IP);
 int getCacheEntry(cacheTable *table, const char *key);
 void getCache(cacheTable *table, const char *key);
-void addToCache(cacheTable *cache, const char *domain, char *IP);
-void readFile(cacheTable *cache, const char *filename, const char *domain);
-void addToFile(const char *filename, const char *IP, const char *domain);
+void addToCache(cacheTable *table, const char *domain, const char *IP);
+void readFile(cacheTable *cache, const char *filename, const char *domain, const char *domainT);
 void isEntry(const char *filename, const char *IP, const char *domain);
-void findDomain(const char* IP, const char* filename);
-void printCache(cacheTable *ht);
+void printDomains(const char *IP, const char *filename);
+void findDomains(const char *IP, const char *filename);
+void printCache(cacheTable *cache);
 void freeCache(cacheTable *cache);
-
-void findDomains(char* ip_addr, cacheTable * cache);
-
 
 #endif//LAB5_LIB_H

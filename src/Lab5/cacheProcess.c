@@ -18,7 +18,7 @@ unsigned long hash(const char *str, unsigned int size) {
     return hash % MaxCacheSize;
 }
 
-void addToCache(cacheTable *cache, const char *domain, char *IP) {
+/*void addToCache(cacheTable *cache, const char *domain, char *IP) {
     unsigned int index = hash(domain, cache->size);
     cacheEntry *entry = malloc(sizeof(cacheEntry));
     entry->domain = strdup(domain);
@@ -29,62 +29,94 @@ void addToCache(cacheTable *cache, const char *domain, char *IP) {
         cache->table[index]->prev = entry;
     }
     cache->table[index] = entry;
-}
-
-/*void calculateWithCache(key) {
-    curTime = getCurrentTime();
-    // Если значение уже было в кэше вернем его
-    if (key in hashTable) {
-        // Сначала обновим время последнего запроса к key
-        timeQueue.set(key, curTime);
-        return hashTable[key];
-    }
-    // Иначе вычислим результат
-    result = calculate(key);
-
-    // Если в кэше уже N элементов, то вытесним самый старый
-    if (hashTable.length == N) {
-        minKey = timeQueue.extractMinValue();
-        hashTable.remove(minKey);
-    }
-
-    // Добавим в таблицу, и в очередь
-    hashTable.add(key, result);
-    timeQueue.add(key, curTime);
-
-    return result;
 }*/
 
+void addToCache(cacheTable *table, const char *domain, const char *IP) {
+    unsigned int index = hash(domain, table->size);
+    cacheEntry *entry = malloc(sizeof(cacheEntry));
+    entry->domain = strdup(domain);
+    entry->IP = strdup(IP);
+    int count = 0;
+    if (table->table[index] != NULL) {
+        cacheEntry *current = table->table[index];
+        while (current != NULL) {
+            count++;
+            if (count >= MaxCacheSize - 1 && current->next != NULL) {
+//                printf("REMOVING: %s\n", current->next->domain);
+                free(current->next);
+                current->next = NULL;
+                break;
+            }
+            current = current->next;
+        }
+    }
+    entry->prev = NULL;
+    entry->next = table->table[index];
+    if (table->table[index] != NULL) {
+        table->table[index]->prev = entry;
+    }
+    table->table[index] = entry;
+}
+
 int getCacheEntry(cacheTable *table, const char *key) {
-    int founded = 0;
     unsigned int index = hash(key, table->size);
     cacheEntry *current = table->table[index];
+    cacheEntry *prev = NULL;
     while (current != NULL) {
         if (strcmp(current->domain, key) == 0) {
-            if (isValidIP(current->IP) == 1)
+            if (isValidIP(current->IP) == 1) {
                 printf("\033[0;32mFound IP: %s\033[0m\n", current->IP);
-            else
+            } else {
                 getCache(table, current->IP);
-            founded = 1;
+            }
+
+            if (prev != NULL) {
+                prev->next = current->next;
+                if (current->next != NULL) {
+                    current->next->prev = prev;
+                }
+                current->prev = NULL;
+                current->next = table->table[index];
+                table->table[index]->prev = current;
+                table->table[index] = current;
+            }
+
+            cacheEntry *next = current->next;
+            while (next != NULL) {
+                next->prev = next->prev == current ? NULL : current;
+                current->next = next;
+                current->prev = prev;
+                prev = current;
+                current = next;
+                next = next->next;
+            }
+            return 1;
         }
+        prev = current;
         current = current->next;
     }
-    return founded;
+    return 0;
 }
 
 void getCache(cacheTable *table, const char *key) {
     if (getCacheEntry(table, key) == 0)
-        readFile(table, "../domains.txt", key);
+        readFile(table, "../domains.txt", key, NULL);
     else {
         return;
     }
     getCacheEntry(table, key);
 }
 
-void printCache(cacheTable *ht) {
-    for (int i = 0; i < ht->size; i++) {
-        if (ht->table[i] != NULL) {
-            printf("%d: %s - %s\n", i, ht->table[i]->domain, ht->table[i]->IP);
+void printCache(cacheTable *cache) {
+    printf("Cache Table:\n");
+    for (int i = 0; i < cache->size; i++) {
+        cacheEntry *current = cache->table[i];
+        if (current != NULL) {
+//            printf("  %d:\n", i);
+            while (current != NULL) {
+                printf("    %s -> %s\n", current->domain, current->IP);
+                current = current->next;
+            }
         }
     }
 }

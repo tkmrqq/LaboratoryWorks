@@ -1,6 +1,6 @@
 #include "lib.h"
 
-void readFile(cacheTable *cache, const char *filename, const char *domain) {
+void readFile(cacheTable *cache, const char *filename, const char *domain, const char* domainT) {
     FILE *fp = fopen(filename, "r");
     if (fp == NULL) {
         fprintf(stderr, "Error! Please, try again\n");
@@ -11,7 +11,15 @@ void readFile(cacheTable *cache, const char *filename, const char *domain) {
         char *found_dns = strtok(line, " \n");
         if (strcmp(found_dns, domain) == 0) {
             char *ip = strtok(NULL, " \n");
-            addToCache(cache, domain, ip);
+            if(isValidIP(ip) == 0){
+                fclose(fp);
+                readFile(cache, filename, ip, domain);
+                return;
+            }
+            else if(domainT != NULL)
+                addToCache(cache, domainT, ip);
+            else
+                addToCache(cache, found_dns, ip);
         }
     }
     fclose(fp);
@@ -58,34 +66,28 @@ void isEntry(const char *filename, const char *IP, const char *domain) {
     }
 }
 
-void findDomain(const char *IP, const char *filename) {
-    FILE *file = fopen(filename, "r");
-    if (file == NULL) {
-        printf("Error: Could not open file %s\n", filename);
-        return;
-    }
-    char line[MaxCacheSize / 4];
-    while (fgets(line, sizeof(line), file) != NULL) {
-        char *savePtr = NULL;
-        char *domain = strtok_r(line, " \n", &savePtr);
-        char *ip = strtok_r(NULL, " \n", &savePtr);
+void findDomains(const char*IP, const char*filename) {
+    char line[256];
+    while (fgets(line, sizeof(line), filename) != NULL) {
+        char* savePtr = NULL;
+        char* found_dns = strtok_r(line, " \n", &savePtr);
+        const char* ip = strtok_r(NULL, " \n", &savePtr);
         if (strcmp(ip, IP) == 0) {
-            printf("\033[0;33m%s\033[0m\n", domain);
+            printf("%s\n", found_dns);
+            long pos = ftell(filename);
+            findDomains(found_dns, filename);
+            fseek(filename, pos, SEEK_SET);
         }
     }
-    fclose(file);
 }
 
-void findDomains(char* ip_addr, cacheTable * cache) {
-    int i;
-    cacheEntry *cacheEntry;
-    for (i = 0; i < cache->size; i++) {
-        cacheEntry = cache->table[i];
-        while (cacheEntry != NULL) {
-            if (strcmp(cacheEntry->IP, ip_addr) == 0) {
-                printf("\033[0;33m%s\033[0m\n", cacheEntry->domain);
-            }
-            cacheEntry = cacheEntry->next;
-        }
+
+void printDomains(const char*IP, const char* filename) {
+    FILE*fp = fopen(filename, "r");
+    if (fp == NULL) {
+        printf("Error: Could not open fp %s\n", filename);
+        return;
     }
+    printDomains(IP, filename);
+    fclose(fp);
 }

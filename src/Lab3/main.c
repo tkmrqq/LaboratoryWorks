@@ -24,6 +24,10 @@ void menu(BMP *bmp) {
         case 5:
             printf("Median value=");
             win = check(win);
+
+            if (win % 2 == 0) {
+                win++;
+            }
             medianFilter(bmp, win, height, width);
             break;
         default:

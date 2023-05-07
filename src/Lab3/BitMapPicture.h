@@ -44,7 +44,7 @@ const char *getFilePath();
 BMP *readBMP(const char *fileName);
 void writeBMP(const char *fileName, const BMP *bmp);
 int compare(const void *a, const void *b);
-void medianFilter(const BMP *bmp, int window, uint32_t height, uint32_t width);
+void medianFilter(const BMP *bmp, const int windowSize, uint32_t height, uint32_t width);
 void menu(BMP *bmp);
 
 #pragma pack(pop)

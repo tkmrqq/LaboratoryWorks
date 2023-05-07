@@ -147,13 +147,7 @@ int compare(const void *a, const void *b) {
     return (*aa > *bb) - (*aa < *bb);
 }
 
-void medianFilter(const BMP *bmp, int window, uint32_t height, uint32_t width) {
-
-    if (window % 2 == 0) {
-        window++;
-    }
-
-    const int windowSize = window;
+void medianFilter(const BMP *bmp, const int windowSize, uint32_t height, uint32_t width) {
 
     int pad = windowSize / 2;
 

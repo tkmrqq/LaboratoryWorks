@@ -9,14 +9,13 @@
 					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
 					"minimumCMakeVersion" : 
 					{
-						"string" : "3.24"
+						"string" : "3.25"
 					},
 					"projectIndex" : 0,
 					"source" : ".",
 					"targetIndexes" : 
 					[
-						0,
-						1
+						0
 					]
 				}
 			],
@@ -28,11 +27,10 @@
 					[
 						0
 					],
-					"name" : "practice",
+					"name" : "tree",
 					"targetIndexes" : 
 					[
-						0,
-						1
+						0
 					]
 				}
 			],
@@ -40,16 +38,9 @@
 			[
 				{
 					"directoryIndex" : 0,
-					"id" : "practice::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-practice-Debug-1944d18174a22a42ed5b.json",
-					"name" : "practice",
-					"projectIndex" : 0
-				},
-				{
-					"directoryIndex" : 0,
-					"id" : "ttt::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-ttt-Debug-418a0bde0183ab81a432.json",
-					"name" : "ttt",
+					"id" : "tree::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-tree-Debug-85bcb241f9b3154e0c80.json",
+					"name" : "tree",
 					"projectIndex" : 0
 				}
 			]
@@ -58,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/GitHub/Laboratory-works/works/practice/cmake-build-debug",
-		"source" : "C:/GitHub/Laboratory-works/works/practice"
+		"build" : "C:/GitHub/Laboratory-works/src/tree/cmake-build-debug",
+		"source" : "C:/GitHub/Laboratory-works/src/tree"
 	},
 	"version" : 
 	{

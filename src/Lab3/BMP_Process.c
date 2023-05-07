@@ -42,9 +42,9 @@ void gammaCorrection(BMP *bmp, uint32_t height, uint32_t width) {
     double gammaINV = 1 / gamma;
     for (int y = 0; y < height; y++) {
         for (int x = 0; x < width; x++) {
-            bmp->pixels[y][x].red = (uint8_t)(pow(bmp->pixels[y][x].red / COLORS, gammaINV) * COLORS);
-            bmp->pixels[y][x].green = (uint8_t)(pow(bmp->pixels[y][x].green / COLORS, gammaINV) * COLORS);
-            bmp->pixels[y][x].blue = (uint8_t)(pow(bmp->pixels[y][x].blue / COLORS, gammaINV) * COLORS);
+            bmp->pixels[y][x].red = (uint8_t) (pow(bmp->pixels[y][x].red / COLORS, gammaINV) * COLORS);
+            bmp->pixels[y][x].green = (uint8_t) (pow(bmp->pixels[y][x].green / COLORS, gammaINV) * COLORS);
+            bmp->pixels[y][x].blue = (uint8_t) (pow(bmp->pixels[y][x].blue / COLORS, gammaINV) * COLORS);
         }
     }
 }
@@ -88,7 +88,7 @@ BMP *readBMP(const char *fileName) {
     int bpp = bmp->header.bpp;
     printf("%d\n", bpp);
 
-    if(bmp->header.bpp != 24){
+    if (bmp->header.bpp != 24) {
         printf("Error: File isn't 24 bits per pixel.");
         free(bmp);
         fclose(inputFile);
@@ -147,11 +147,14 @@ int compare(const void *a, const void *b) {
     return (*aa > *bb) - (*aa < *bb);
 }
 
-void medianFilter(const BMP *bmp, int windowSize, uint32_t height, uint32_t width) {
+void medianFilter(const BMP *bmp, int window, uint32_t height, uint32_t width) {
 
-    if (windowSize % 2 == 0) {
-        windowSize++;
+    if (window % 2 == 0) {
+        window++;
     }
+
+    const int windowSize = window;
+
     int pad = windowSize / 2;
 
     RGB **pdPixels = malloc(sizeof(RGB *) * (height + 2 * pad));

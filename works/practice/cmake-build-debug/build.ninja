@@ -49,8 +49,8 @@ cmake_ninja_workdir = C$:/GitHub/Laboratory-works/works/practice/cmake-build-deb
 
 build cmake_object_order_depends_target_practice: phony || CMakeFiles/practice.dir
 
-build CMakeFiles/practice.dir/main.c.obj: C_COMPILER__practice_Debug C$:/GitHub/Laboratory-works/works/practice/main.c || cmake_object_order_depends_target_practice
-  DEP_FILE = CMakeFiles\practice.dir\main.c.obj.d
+build CMakeFiles/practice.dir/IndpSet.c.obj: C_COMPILER__practice_Debug C$:/GitHub/Laboratory-works/works/practice/IndpSet.c || cmake_object_order_depends_target_practice
+  DEP_FILE = CMakeFiles\practice.dir\IndpSet.c.obj.d
   FLAGS = -g -fdiagnostics-color=always -std=gnu2x
   OBJECT_DIR = CMakeFiles\practice.dir
   OBJECT_FILE_DIR = CMakeFiles\practice.dir
@@ -63,7 +63,7 @@ build CMakeFiles/practice.dir/main.c.obj: C_COMPILER__practice_Debug C$:/GitHub/
 #############################################
 # Link the executable practice.exe
 
-build practice.exe: C_EXECUTABLE_LINKER__practice_Debug CMakeFiles/practice.dir/main.c.obj
+build practice.exe: C_EXECUTABLE_LINKER__practice_Debug CMakeFiles/practice.dir/IndpSet.c.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\practice.dir
@@ -72,39 +72,6 @@ build practice.exe: C_EXECUTABLE_LINKER__practice_Debug CMakeFiles/practice.dir/
   TARGET_FILE = practice.exe
   TARGET_IMPLIB = libpractice.dll.a
   TARGET_PDB = practice.exe.dbg
-
-# =============================================================================
-# Object build statements for EXECUTABLE target ttt
-
-
-#############################################
-# Order-only phony target for ttt
-
-build cmake_object_order_depends_target_ttt: phony || CMakeFiles/ttt.dir
-
-build CMakeFiles/ttt.dir/ttt.c.obj: C_COMPILER__ttt_Debug C$:/GitHub/Laboratory-works/works/practice/ttt.c || cmake_object_order_depends_target_ttt
-  DEP_FILE = CMakeFiles\ttt.dir\ttt.c.obj.d
-  FLAGS = -g -fdiagnostics-color=always -std=gnu2x
-  OBJECT_DIR = CMakeFiles\ttt.dir
-  OBJECT_FILE_DIR = CMakeFiles\ttt.dir
-
-
-# =============================================================================
-# Link build statements for EXECUTABLE target ttt
-
-
-#############################################
-# Link the executable ttt.exe
-
-build ttt.exe: C_EXECUTABLE_LINKER__ttt_Debug CMakeFiles/ttt.dir/ttt.c.obj
-  FLAGS = -g
-  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
-  OBJECT_DIR = CMakeFiles\ttt.dir
-  POST_BUILD = cd .
-  PRE_LINK = cd .
-  TARGET_FILE = ttt.exe
-  TARGET_IMPLIB = libttt.dll.a
-  TARGET_PDB = ttt.exe.dbg
 
 
 #############################################
@@ -134,8 +101,6 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 
 build practice: phony practice.exe
 
-build ttt: phony ttt.exe
-
 # =============================================================================
 # Folder targets.
 
@@ -144,7 +109,7 @@ build ttt: phony ttt.exe
 #############################################
 # Folder: C:/GitHub/Laboratory-works/works/practice/cmake-build-debug
 
-build all: phony practice.exe ttt.exe
+build all: phony practice.exe
 
 # =============================================================================
 # Built-in targets

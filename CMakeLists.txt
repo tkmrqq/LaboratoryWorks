@@ -4,6 +4,4 @@ project(LaboratoryWorks C)
 set(CMAKE_C_STANDARD 99)
 
 add_subdirectory(src/Lab1)
-add_subdirectory(src/Lab2)
-add_subdirectory(src/Lab3)
-add_subdirectory(src/Lab4)
+

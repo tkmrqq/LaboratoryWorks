@@ -128,7 +128,7 @@ int main() {
                            V,
                            tempSolutionSet);
     printAllIndependentSets();
-    cout << "Maximal independent s4et is:" << endl;
+    cout << "Maximal independent set is:" << endl;
     printMaximalIndependentSets();
     return 0;
 }

@@ -1,4 +1,4 @@
-"C:\Program Files\JetBrains\CLion 2022.2.4\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=C:/Program Files/JetBrains/CLion 2022.2.4/bin/ninja/win/x64/ninja.exe" -G Ninja -S C:\GitHub\Laboratory-works\src\graphs -B C:\GitHub\Laboratory-works\src\graphs\cmake-build-debug
+"C:\Program Files\JetBrains\CLion 2022.2.4\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=C:/Program Files/JetBrains/CLion 2022.2.4/bin/ninja/win/x64/ninja.exe" -G Ninja -S C:\GitHub\Laboratory-works\works\graphs -B C:\GitHub\Laboratory-works\works\graphs\cmake-build-debug
 -- The C compiler identification is GNU 11.2.0
 -- The CXX compiler identification is GNU 11.2.0
 -- Detecting C compiler ABI info
@@ -13,4 +13,4 @@
 -- Detecting CXX compile features - done
 -- Configuring done
 -- Generating done
--- Build files have been written to: C:/GitHub/Laboratory-works/src/graphs/cmake-build-debug
+-- Build files have been written to: C:/GitHub/Laboratory-works/works/graphs/cmake-build-debug

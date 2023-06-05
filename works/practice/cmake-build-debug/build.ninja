@@ -73,6 +73,39 @@ build practice.exe: C_EXECUTABLE_LINKER__practice_Debug CMakeFiles/practice.dir/
   TARGET_IMPLIB = libpractice.dll.a
   TARGET_PDB = practice.exe.dbg
 
+# =============================================================================
+# Object build statements for EXECUTABLE target tree
+
+
+#############################################
+# Order-only phony target for tree
+
+build cmake_object_order_depends_target_tree: phony || CMakeFiles/tree.dir
+
+build CMakeFiles/tree.dir/TreeMethod.c.obj: C_COMPILER__tree_Debug C$:/GitHub/Laboratory-works/works/practice/TreeMethod.c || cmake_object_order_depends_target_tree
+  DEP_FILE = CMakeFiles\tree.dir\TreeMethod.c.obj.d
+  FLAGS = -g -fdiagnostics-color=always -std=gnu2x
+  OBJECT_DIR = CMakeFiles\tree.dir
+  OBJECT_FILE_DIR = CMakeFiles\tree.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target tree
+
+
+#############################################
+# Link the executable tree.exe
+
+build tree.exe: C_EXECUTABLE_LINKER__tree_Debug CMakeFiles/tree.dir/TreeMethod.c.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\tree.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = tree.exe
+  TARGET_IMPLIB = libtree.dll.a
+  TARGET_PDB = tree.exe.dbg
+
 
 #############################################
 # Utility command for edit_cache
@@ -101,6 +134,8 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 
 build practice: phony practice.exe
 
+build tree: phony tree.exe
+
 # =============================================================================
 # Folder targets.
 
@@ -109,7 +144,7 @@ build practice: phony practice.exe
 #############################################
 # Folder: C:/GitHub/Laboratory-works/works/practice/cmake-build-debug
 
-build all: phony practice.exe
+build all: phony practice.exe tree.exe
 
 # =============================================================================
 # Built-in targets

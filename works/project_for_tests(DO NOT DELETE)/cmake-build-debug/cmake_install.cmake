@@ -1,4 +1,4 @@
-# Install script for directory: C:/GitHub/Laboratory-works/src/project_for_tests(DO NOT DELETE)
+# Install script for directory: C:/GitHub/Laboratory-works/works/project_for_tests(DO NOT DELETE)
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/GitHub/Laboratory-works/src/project_for_tests(DO NOT DELETE)/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/GitHub/Laboratory-works/works/project_for_tests(DO NOT DELETE)/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

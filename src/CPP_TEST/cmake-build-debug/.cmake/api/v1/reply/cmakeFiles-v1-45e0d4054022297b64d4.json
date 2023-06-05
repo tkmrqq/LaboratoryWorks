@@ -777,8 +777,8 @@
 	"kind" : "cmakeFiles",
 	"paths" : 
 	{
-		"build" : "C:/GitHub/Laboratory-works/src/graphs/cmake-build-debug",
-		"source" : "C:/GitHub/Laboratory-works/src/graphs"
+		"build" : "C:/GitHub/Laboratory-works/src/CPP_TEST/cmake-build-debug",
+		"source" : "C:/GitHub/Laboratory-works/src/CPP_TEST"
 	},
 	"version" : 
 	{

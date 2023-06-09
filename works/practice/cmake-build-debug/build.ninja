@@ -106,6 +106,39 @@ build tree.exe: C_EXECUTABLE_LINKER__tree_Debug CMakeFiles/tree.dir/TreeMethod.c
   TARGET_IMPLIB = libtree.dll.a
   TARGET_PDB = tree.exe.dbg
 
+# =============================================================================
+# Object build statements for EXECUTABLE target t
+
+
+#############################################
+# Order-only phony target for t
+
+build cmake_object_order_depends_target_t: phony || CMakeFiles/t.dir
+
+build CMakeFiles/t.dir/tttt.c.obj: C_COMPILER__t_Debug C$:/GitHub/Laboratory-works/works/practice/tttt.c || cmake_object_order_depends_target_t
+  DEP_FILE = CMakeFiles\t.dir\tttt.c.obj.d
+  FLAGS = -g -fdiagnostics-color=always -std=gnu2x
+  OBJECT_DIR = CMakeFiles\t.dir
+  OBJECT_FILE_DIR = CMakeFiles\t.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target t
+
+
+#############################################
+# Link the executable t.exe
+
+build t.exe: C_EXECUTABLE_LINKER__t_Debug CMakeFiles/t.dir/tttt.c.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\t.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = t.exe
+  TARGET_IMPLIB = libt.dll.a
+  TARGET_PDB = t.exe.dbg
+
 
 #############################################
 # Utility command for edit_cache
@@ -134,6 +167,8 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 
 build practice: phony practice.exe
 
+build t: phony t.exe
+
 build tree: phony tree.exe
 
 # =============================================================================
@@ -144,7 +179,7 @@ build tree: phony tree.exe
 #############################################
 # Folder: C:/GitHub/Laboratory-works/works/practice/cmake-build-debug
 
-build all: phony practice.exe tree.exe
+build all: phony practice.exe tree.exe t.exe
 
 # =============================================================================
 # Built-in targets

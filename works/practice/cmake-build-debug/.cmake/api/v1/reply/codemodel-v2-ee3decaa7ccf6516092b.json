@@ -16,7 +16,8 @@
 					"targetIndexes" : 
 					[
 						0,
-						1
+						1,
+						2
 					]
 				}
 			],
@@ -32,7 +33,8 @@
 					"targetIndexes" : 
 					[
 						0,
-						1
+						1,
+						2
 					]
 				}
 			],
@@ -43,6 +45,13 @@
 					"id" : "practice::@6890427a1f51a3e7e1df",
 					"jsonFile" : "target-practice-Debug-f905dd0b55cbe85ca978.json",
 					"name" : "practice",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "t::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-t-Debug-30c60d45192f1db64154.json",
+					"name" : "t",
 					"projectIndex" : 0
 				},
 				{

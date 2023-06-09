@@ -5,3 +5,4 @@ set(CMAKE_C_STANDARD 23)
 
 add_executable(practice IndpSet.c)
 add_executable(tree TreeMethod.c)
+add_executable(t tttt.c)

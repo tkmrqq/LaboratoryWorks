@@ -1,15 +1,30 @@
+#include <ctype.h>
 #include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
+#include <string.h>
 
-char* IsMyLifeTrash()
-{
-    int rnd = rand() % 2;
-    return (rnd == 0) ? "Not trash" : "Trash";
-    //why u reading this? (0-0)
+int isVowel(char c) {
+    switch (tolower(c)) {
+        case 'a':
+        case 'e':
+        case 'i':
+        case 'o':
+        case 'u':
+            return 1;
+        default:
+            return 0;
+    }
 }
 
-int main(){
-    srand(time(0));
-    printf("%s", IsMyLifeTrash());
+size_t get_count(const char *s) {
+    int count = 0;
+    for (int i = 0; i < strlen(s); i++) {
+        if (isVowel(s[i])) {
+            count++;
+        }
+    }
+    return count;
+}
+
+int main() {
+    printf("%zu", get_count("aeiou"));
 }

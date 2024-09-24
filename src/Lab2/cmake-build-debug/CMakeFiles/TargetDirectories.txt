@@ -1,4 +1,0 @@
-C:/GitHub/Laboratory-works/src/Lab2/cmake-build-debug/CMakeFiles/Compressor.dir
-C:/GitHub/Laboratory-works/src/Lab2/cmake-build-debug/CMakeFiles/Decompress.dir
-C:/GitHub/Laboratory-works/src/Lab2/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/GitHub/Laboratory-works/src/Lab2/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -1,6 +1,0 @@
-# ninja log v5
-122	228	7023265910248915	Decompress.exe	c5b4b26341260b03
-233	485	7023973119524377	Compressor.exe	3647b20effcf0052
-2	122	7023265909210758	CMakeFiles/Decompress.dir/decompress.c.obj	d4f3d08ef2318d92
-2	206	7023973116801790	CMakeFiles/Compressor.dir/main.c.obj	172ffd3a305d9506
-16	232	7023973117077616	CMakeFiles/Compressor.dir/functions.c.obj	de8919d2c7a0cbf4

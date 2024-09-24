@@ -8,3 +8,5 @@ add_subdirectory(src/Lab2)
 add_subdirectory(src/Lab3)
 add_subdirectory(src/Lab4)
 add_subdirectory(src/Lab5)
+
+add_subdirectory("works/project_for_tests(DO NOT DELETE)")

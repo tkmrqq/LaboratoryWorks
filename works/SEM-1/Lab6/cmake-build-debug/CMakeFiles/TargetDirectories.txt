@@ -1,4 +1,0 @@
-C:/GitHub/Laboratory-works/Lazakovich V/Lab6/cmake-build-debug/CMakeFiles/Lab6-2.dir
-C:/GitHub/Laboratory-works/Lazakovich V/Lab6/cmake-build-debug/CMakeFiles/Lab6-1.dir
-C:/GitHub/Laboratory-works/Lazakovich V/Lab6/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/GitHub/Laboratory-works/Lazakovich V/Lab6/cmake-build-debug/CMakeFiles/rebuild_cache.dir

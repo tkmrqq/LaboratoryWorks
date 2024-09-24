@@ -1,3 +1,0 @@
-C:/GitHub/Laboratory-works/works/project_for_tests(DO NOT DELETE)/cmake-build-debug/CMakeFiles/project_for_tests_DO_NOT_DELETE_.dir
-C:/GitHub/Laboratory-works/works/project_for_tests(DO NOT DELETE)/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/GitHub/Laboratory-works/works/project_for_tests(DO NOT DELETE)/cmake-build-debug/CMakeFiles/rebuild_cache.dir
